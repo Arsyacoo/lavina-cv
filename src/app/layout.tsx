@@ -9,7 +9,7 @@ const instrument = Instrument_Serif({ variable: "--font-instrument", subsets: ["
 const plexMono = IBM_Plex_Mono({ variable: "--font-plex-mono", subsets: ["latin"], weight: ["400", "500", "600"], display: "swap" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://arsyacoo.vercel.app"),
+  metadataBase: new URL("https://arsyalavina.dev"),
   title: "Lavina Arsya Aryanto | Full-Stack Developer & AI/ML Enthusiast",
   description: "Portfolio of Lavina Arsya Aryanto, an Informatics undergraduate building full-stack web, AI-assisted, and data-driven projects.",
   keywords: [
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Lavina Arsya Aryanto | Portfolio",
     description: "Full-stack, AI-assisted, and data-driven project portfolio.",
-    url: "https://arsyacoo.vercel.app",
+    url: "https://arsyalavina.dev",
     siteName: "Lavina Arsya Aryanto Portfolio",
     images: [
       {
@@ -61,3 +61,4 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     </html>
   );
 }
+
