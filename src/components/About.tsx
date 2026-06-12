@@ -1,100 +1,71 @@
-"use client";
-import { motion } from "framer-motion";
-import { User, Mail, MapPin, Code2 } from "lucide-react";
-import Image from "next/image";
+const tools = [
+    ["01", "Frontend", "React, Next.js, TypeScript, JavaScript, HTML, CSS, Tailwind CSS, Bootstrap"],
+    ["02", "Backend", "Python, FastAPI, Laravel, PHP, REST API"],
+    ["03", "Database", "MySQL, PostgreSQL, MongoDB, SQL database design"],
+    ["04", "AI and Data", "Gemini API, Groq API, Scikit-learn, Pandas, NumPy, Random Forest, Streamlit"],
+    ["05", "Tools", "Git, GitHub, VS Code, Google Cloud, Google Colab, Jupyter Notebook"],
+];
 
 export default function About() {
     return (
-        <section id="about" className="py-20 relative px-4">
-            <div className="max-w-6xl mx-auto">
-                <motion.h2
-                    className="text-3xl md:text-4xl font-bold mb-12 text-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                >
-                    About <span className="text-gradient">Me</span>
-                </motion.h2>
+        <>
+            <section id="about" className="bg-[#F5F4F0] py-16 md:py-28">
+                <div className="container-grid">
+                    <div className="mb-10 flex items-center gap-4 border-b rule pb-5 md:mb-14 md:gap-5">
+                        <span className="font-caption text-[13px] text-[#727974]">02</span>
+                        <div className="h-px w-8 bg-[#c1c8c2]" />
+                        <h2 className="font-display text-3xl tracking-[-0.04em] text-[#1b1c1a] sm:text-4xl md:text-5xl">About me</h2>
+                    </div>
 
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                    {/* Image Section */}
-                    <motion.div
-                        className="relative flex justify-center md:justify-start"
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                    >
-                        <div className="relative w-[300px] h-[400px] sm:w-[350px] sm:h-[450px]">
-                            {/* Decorative background element */}
-                            <div className="absolute top-5 -left-5 w-full h-full border-2 border-primary/20 rounded-2xl hidden md:block" />
-
-                            {/* Image Container */}
-                            <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border border-white/10 group z-10 bg-zinc-900">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-                                <Image
-                                    src="/profile.png"
-                                    alt="Lavina Arsya"
-                                    fill
-                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                />
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    {/* Content Section */}
-                    <motion.div
-                        className="space-y-8"
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                    >
-                        <div className="space-y-4">
-                            <h3 className="text-3xl font-bold">
-                                Driven by <span className="text-primary">Innovation</span> & <span className="text-secondary">Data</span>
-                            </h3>
-                            <p className="text-zinc-400 leading-relaxed">
-                                I am a passionate Fullstack Developer and Machine Learning Engineer with a strong foundation in building scalable web applications and intelligent systems.
+                    <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-16">
+                        <div className="md:col-span-5">
+                            <p className="text-[15px] leading-8 text-[#1b1c1a] sm:text-[17px]">
+                                I am an Informatics undergraduate who enjoys learning through practical projects. My current interests include generative AI, machine learning, frontend development, backend development, and open-source documentation.
                             </p>
-                            <p className="text-zinc-400 leading-relaxed">
-                                My journey combines the art of software engineering with the science of data. From crafting pixel-perfect user interfaces to training complex machine learning models, I love bridging the gap between engaging user experiences and powerful backend logic.
-                            </p>
-                        </div>
+                            <blockquote className="mt-8 border-l border-[#284739] pl-5 font-display text-2xl italic leading-tight text-[#5f5e5e] sm:mt-9 sm:text-3xl">
+                                Turning academic ideas into functional, documented reality.
+                            </blockquote>
 
-                        {/* Stats */}
-                        <div className="grid grid-cols-2 gap-6 bg-white/5 p-6 rounded-2xl border border-white/5">
-                            <div className="text-center md:text-left">
-                                <h4 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/50">3+</h4>
-                                <p className="text-zinc-400 text-sm mt-1 uppercase tracking-wider font-semibold">Years Experience</p>
-                            </div>
-                            <div className="text-center md:text-left border-l md:border-l-0 md:border-r border-white/10 pl-6 md:pl-0">
-                                {/* Adjusted border for mobile/desktop, actually simpler to just have them side by side */}
-                                <h4 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-secondary to-secondary/50">15+</h4>
-                                <p className="text-zinc-400 text-sm mt-1 uppercase tracking-wider font-semibold">Projects Completed</p>
-                            </div>
-                        </div>
-
-                        {/* Personal Info Grid */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            {[
-                                { icon: User, label: "Name", value: "Lavina Arsya" },
-                                { icon: Mail, label: "Email", value: "arsyalavina@gmail.com" },
-                                { icon: Code2, label: "Role", value: "Fullstack & ML Engineer" },
-                                { icon: MapPin, label: "Location", value: "Indonesia" },
-                            ].map((item, index) => (
-                                <div key={index} className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors">
-                                    <div className="bg-primary/10 p-2.5 rounded-lg text-primary">
-                                        <item.icon size={18} />
-                                    </div>
-                                    <div>
-                                        <div className="text-zinc-500 text-xs">{item.label}</div>
-                                        <div className="text-white text-sm font-medium">{item.value}</div>
-                                    </div>
+                            <div className="mt-10 space-y-6 font-caption text-[13px] uppercase tracking-[0.13em] text-[#727974]">
+                                <div>
+                                    <p className="mb-2 text-[#c1c8c2]">Education</p>
+                                    <p className="text-[#1b1c1a]">Informatics Undergraduate</p>
+                                    <p>Indonesia</p>
                                 </div>
-                            ))}
+                                <div>
+                                    <p className="mb-2 text-[#c1c8c2]">Activity</p>
+                                    <p className="normal-case tracking-normal text-[#5f5e5e]">Currently developing academic and personal projects involving AI, data, and web applications.</p>
+                                </div>
+                            </div>
                         </div>
-                    </motion.div>
+
+                        <div className="md:col-span-7">
+                            <h3 className="font-display mb-6 text-2xl tracking-[-0.04em] text-[#1b1c1a] sm:mb-8 sm:text-3xl">Tools I work with</h3>
+                            <div className="border-y rule">
+                                {tools.map(([number, title, items]) => (
+                                    <div key={title} className="grid grid-cols-1 gap-2 border-b rule py-5 last:border-b-0 sm:grid-cols-12 sm:gap-4">
+                                        <span className="font-caption text-[12px] text-[#727974] sm:col-span-1 sm:text-[13px]">{number}</span>
+                                        <p className="font-caption text-[12px] uppercase tracking-[0.12em] text-[#1b1c1a] sm:col-span-4 sm:text-[13px] sm:tracking-[0.14em]">{title}</p>
+                                        <p className="font-caption text-[12px] leading-6 text-[#5f5e5e] sm:col-span-7 sm:text-[13px]">{items}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div className="border-y rule bg-[#F5F4F0] py-4">
+                <div className="container-grid hide-scrollbar flex items-center gap-6 overflow-x-auto">
+                    {["Informatics Undergraduate", "Google Cloud Skills Boost", "AI Capstone Projects", "Open-Source Contributions"].map((item, index) => (
+                        <div key={item} className="flex shrink-0 items-center gap-3">
+                            <span className="font-caption text-[13px] text-[#727974]">{String(index + 1).padStart(2, "0")}</span>
+                            <span className="tagline-item">{item}</span>
+                            {index < 3 && <span className="ml-3 h-4 w-px bg-[#c1c8c2]" />}
+                        </div>
+                    ))}
                 </div>
             </div>
-        </section>
+        </>
     );
 }

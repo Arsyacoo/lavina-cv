@@ -1,7 +1,10 @@
-export default function Footer() {
+﻿export default function Footer() {
     return (
-        <footer className="py-8 text-center text-zinc-500 text-sm border-t border-white/5 bg-black/50 backdrop-blur-sm">
-            <p>&copy; {new Date().getFullYear()} Lavina. All rights reserved.</p>
+        <footer className="border-t border-[#FAF9F5]/10 bg-[#202020] py-8 text-[#FAF9F5]">
+            <div className="container-grid font-caption text-[13px] tracking-[0.12em] text-[#FAF9F5]/45">
+                © 2026 Lavina Arsya Aryanto. All rights reserved.
+            </div>
         </footer>
     );
 }
+
