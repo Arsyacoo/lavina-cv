@@ -6,7 +6,7 @@ const projects = [
     {
         number: "01",
         type: "Healthcare",
-        year: "2024",
+        year: "2026",
         role: "Full-stack Developer",
         title: "AI-Powered Healthcare Assistant",
         description: "A healthcare education prototype that provides symptom guidance, AI chat, medication information, and emergency red-flag detection.",
@@ -19,7 +19,7 @@ const projects = [
     {
         number: "02",
         type: "Document AI",
-        year: "2024",
+        year: "2026",
         role: "Full-stack Developer",
         title: "PDF Insight AI",
         description: "A document analysis application that allows users to upload PDF files, ask questions, review source references, and export generated reports.",
@@ -32,7 +32,7 @@ const projects = [
     {
         number: "03",
         type: "Machine Learning",
-        year: "2023",
+        year: "2026",
         role: "Data Analyst",
         title: "Digital Transaction Fraud Detection",
         description: "A machine-learning project using Random Forest to identify potentially fraudulent financial transactions and display model evaluation results.",
@@ -109,4 +109,5 @@ export default function Projects() {
         </section>
     );
 }
+
 
