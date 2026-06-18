@@ -1,22 +1,23 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 export default function Navbar() {
     return (
-        <header className="sticky top-0 z-50 border-b rule bg-[#FAF9F5]/90 backdrop-blur-md">
-            <nav className="container-grid flex h-12 items-center justify-between gap-4 overflow-hidden">
-                <Link href="#hero" className="shrink-0 font-caption text-[11px] uppercase tracking-[0.12em] text-[#1b1c1a] hover:text-[#284739] sm:text-[13px] sm:tracking-[0.16em]">
-                    Lavina Arsya Aryanto
+        <header className="sticky top-0 z-50 border-b border-black/10 bg-[#f7f6f2]/92 backdrop-blur-md">
+            <nav className="mx-auto flex h-16 w-[min(100%-40px,1120px)] items-center justify-between" aria-label="Primary navigation">
+                <Link href="#hero" aria-label="Go to top" className="font-display text-xl font-semibold tracking-[-0.04em] text-black">
+                    LA
                 </Link>
-                <div className="hide-scrollbar flex min-w-0 items-center gap-4 overflow-x-auto whitespace-nowrap font-caption text-[11px] uppercase tracking-[0.12em] text-[#1b1c1a] sm:gap-5 sm:text-[13px] sm:tracking-[0.16em]">
-                    <Link href="#projects" className="hidden hover:text-[#284739] sm:block">Work</Link>
-                    <Link href="#about" className="hidden hover:text-[#284739] sm:block">About</Link>
-                    <Link href="#contact" className="hidden hover:text-[#284739] sm:block">Contact</Link>
-                    <span className="hidden h-1 w-1 rounded-full bg-[#284739] md:block" />
-                    <Link href="#contact" className="hidden text-[#727974] hover:text-[#284739] min-[560px]:block">Available for internship</Link>
+
+                <div className="hidden items-center gap-8 text-[12px] text-black/60 md:flex">
+                    <Link href="#projects" className="nav-link active">Work</Link>
+                    <Link href="#about" className="nav-link">About</Link>
+                    <Link href="#contact" className="nav-link">Contact</Link>
                 </div>
+
+                <Link href="/Lavina-Arsya-Resume.pdf" download className="border border-black bg-black px-4 py-2 font-caption text-[10px] font-semibold uppercase tracking-[0.16em] transition-colors hover:bg-[#284739]" style={{ color: "#f7f6f2" }}>
+                    Download CV
+                </Link>
             </nav>
         </header>
     );
 }
-
-

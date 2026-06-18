@@ -1,19 +1,17 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 const projects = [
     {
         number: "01",
-        type: "Healthcare",
+        type: "Healthcare / AI",
         year: "2026",
         role: "Full-stack Developer",
         title: "AI-Powered Healthcare Assistant",
         description: "A healthcare education prototype that provides symptom guidance, AI chat, medication information, and emergency red-flag detection.",
-        meta: "React, TypeScript, Gemini API",
+        tags: ["React", "TypeScript", "Gemini API"],
         image: "/ai-healthcare.webp",
-        imageClassName: "object-contain p-1",
-        frameClassName: "aspect-[16/10]",
         github: "https://github.com/Arsyacoo/AI-Healthcare",
     },
     {
@@ -23,91 +21,73 @@ const projects = [
         role: "Full-stack Developer",
         title: "PDF Insight AI",
         description: "A document analysis application that allows users to upload PDF files, ask questions, review source references, and export generated reports.",
-        meta: "React, FastAPI, Groq API, Python",
+        tags: ["React", "FastAPI", "Groq API", "Python"],
         image: "/pdf-insight.webp",
-        imageClassName: "object-cover object-top",
-        frameClassName: "aspect-[16/10]",
         github: "https://github.com/Arsyacoo/PDF-Insight-AI",
     },
     {
         number: "03",
         type: "Machine Learning",
         year: "2026",
-        role: "Data Analyst",
+        role: "Data Analyst / ML Developer",
         title: "Digital Transaction Fraud Detection",
         description: "A machine-learning project using Random Forest to identify potentially fraudulent financial transactions and display model evaluation results.",
-        meta: "Python, Scikit-learn, Pandas, Streamlit",
+        tags: ["Python", "Scikit-learn", "Pandas", "Streamlit"],
         image: "/fraud-detection.webp",
-        imageClassName: "object-contain p-1",
-        frameClassName: "aspect-[16/9]",
         github: "https://github.com/Arsyacoo/Fraud-Transaction-Detection-Random-Forest",
     },
 ];
 
 export default function Projects() {
     return (
-        <section id="projects" className="bg-[#FAF9F5] py-16 md:py-28">
-            <div className="container-grid">
-                <div className="mb-12 flex flex-wrap items-center gap-4 border-b rule pb-5 md:mb-16 md:gap-5">
-                    <span className="font-caption text-[13px] text-[#727974]">01</span>
-                    <div className="h-px w-8 bg-[#c1c8c2]" />
-                    <h2 className="font-display text-3xl tracking-[-0.04em] text-[#1b1c1a] sm:text-4xl md:text-5xl">Selected Work</h2>
-                    <span className="ml-auto hidden font-caption text-[13px] uppercase tracking-[0.18em] text-[#c1c8c2] md:block">Selected work / AI projects</span>
+        <section id="projects" className="site-texture border-t border-black/12 bg-[#f7f6f2] py-16 md:py-24">
+            <div className="mx-auto w-[min(100%-40px,1120px)]">
+                <div className="mb-16 grid grid-cols-1 gap-6 border-t border-black/14 pt-14 md:grid-cols-[1fr_auto] md:items-start">
+                    <div>
+                        <h2 className="font-display text-4xl font-medium tracking-[-0.055em] text-black md:text-5xl">Selected Work</h2>
+                        <p className="mt-3 font-caption text-[10px] uppercase tracking-[0.22em] text-black/45">Projects that define my technical direction</p>
+                    </div>
+                    <p className="font-caption text-[10px] uppercase tracking-[0.22em] text-black/45">01 / 03</p>
                 </div>
 
-                <div className="space-y-16 md:space-y-28">
+                <div className="space-y-24 md:space-y-32">
                     {projects.map((project, index) => {
-                        const reverse = index === 1;
+                        const reverse = index % 2 === 1;
                         return (
-                            <article key={project.title} className="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-16">
-                                <div className={`${reverse ? "md:order-2 md:col-span-5" : "md:col-span-5"}`}>
-                                    <div className="mb-5 flex items-center gap-3 font-caption text-[12px] uppercase tracking-[0.14em] text-[#727974] sm:mb-7 sm:gap-4 sm:text-[13px] sm:tracking-[0.18em]">
-                                        <span>{project.number}</span>
-                                        <div className="h-px w-7 bg-[#c1c8c2]" />
-                                        <span>{project.type}</span>
+                            <article key={project.title} className={`grid grid-cols-1 items-center gap-10 md:gap-16 ${reverse ? "md:grid-cols-[0.92fr_1.08fr]" : "md:grid-cols-[1.08fr_0.92fr]"}`}>
+                                <Link href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} project`} className={`${reverse ? "md:order-2" : ""} group block`}>
+                                    <div className="border border-black/10 bg-[#f7f6f2] p-0 shadow-[0_22px_55px_rgba(20,20,18,0.10)] transition-transform duration-300 group-hover:-translate-y-1 motion-reduce:transition-none motion-reduce:group-hover:translate-y-0">
+                                        <div className="relative aspect-[16/9] overflow-hidden bg-white">
+                                            <Image src={project.image} alt={`${project.title} interface preview`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-contain object-center p-2 contrast-[1.03] saturate-[1.08] transition duration-500 group-hover:scale-[1.01] motion-reduce:transition-none motion-reduce:group-hover:scale-100 sm:p-3" />
+                                        </div>
                                     </div>
-                                    <h3 className="font-display text-3xl leading-tight tracking-[-0.04em] text-[#1b1c1a] sm:text-4xl">{project.title}</h3>
-                                    <p className="mt-4 text-[15px] leading-7 text-[#5f5e5e] sm:text-[17px]">{project.description}</p>
+                                </Link>
 
-                                    <div className="mt-6 grid grid-cols-1 gap-y-4 border-y rule py-4 font-caption text-[12px] uppercase tracking-[0.1em] text-[#727974] min-[420px]:grid-cols-2 min-[420px]:gap-x-5 sm:mt-7 sm:text-[13px] sm:tracking-[0.12em]">
-                                        <div>
-                                            <p className="mb-2 text-[#c1c8c2]">Role</p>
-                                            <p>{project.role}</p>
-                                        </div>
-                                        <div>
-                                            <p className="mb-2 text-[#c1c8c2]">Year</p>
-                                            <p>{project.year}</p>
-                                        </div>
-                                        <div className="mt-1 normal-case tracking-normal text-[#5f5e5e] min-[420px]:col-span-2 min-[420px]:mt-4">
-                                            <p className="mb-2 uppercase tracking-[0.12em] text-[#c1c8c2]">Tech</p>
-                                            <p>{project.meta}</p>
-                                        </div>
+                                <div className={`${reverse ? "md:order-1" : ""} md:px-4`}>
+                                    <p className="font-caption text-[10px] uppercase tracking-[0.22em] text-black/45">{project.number} / {project.type}</p>
+                                    <h3 className="mt-5 font-display text-4xl font-medium tracking-[-0.05em] text-black md:text-[2.65rem] md:leading-[1.02]">{project.title}</h3>
+                                    <p className="mt-5 max-w-[560px] text-[15px] leading-7 text-black/62 md:text-[16px] md:leading-8">{project.description}</p>
+
+                                    <div className="mt-6 flex flex-wrap gap-2">
+                                        {project.tags.map((tag) => (
+                                            <span key={tag} className="border border-black/18 px-3.5 py-1.5 font-caption text-[9px] uppercase tracking-[0.16em] text-black/58">{tag}</span>
+                                        ))}
                                     </div>
 
-                                    <div className="mt-6 flex flex-wrap items-center gap-5">
-                                        <Link href={project.github} target="_blank" className="text-link">View project <ArrowUpRight size={13} /></Link>
-                                        <Link href={project.github} target="_blank" className="font-caption text-[13px] text-[#5f5e5e] hover:text-[#284739]">GitHub</Link>
+                                    <div className="mt-7 grid max-w-[560px] grid-cols-2 gap-3 border-y border-black/12 py-4 font-caption text-[10px] uppercase tracking-[0.16em] text-black/54">
+                                        <span>Role: {project.role}</span>
+                                        <span>Year: {project.year}</span>
                                     </div>
-                                </div>
 
-                                <div className={`${reverse ? "md:order-1 md:col-span-7" : "md:col-span-7"}`}>
-                                    <div className="project-window">
-                                        <div className={`${project.frameClassName} overflow-hidden bg-[#f8f7f3]`}>
-                                            <Image src={project.image} alt={`${project.title} preview`} width={900} height={675} className={`h-full w-full ${project.imageClassName} transition-transform duration-700 hover:scale-[1.02]`} />
-                                        </div>
-                                    </div>
+                                    <Link href={project.github} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 font-caption text-[11px] uppercase tracking-[0.18em] text-black transition-colors hover:text-[#284739]">
+                                        View project <ArrowUpRight size={13} />
+                                    </Link>
                                 </div>
                             </article>
                         );
                     })}
                 </div>
-
-                <Link href="https://github.com/Arsyacoo" target="_blank" className="mt-16 inline-flex items-center gap-3 font-caption text-[12px] uppercase tracking-[0.14em] text-[#727974] hover:text-[#284739] sm:mt-20 sm:text-[13px] sm:tracking-[0.18em]">
-                    View more projects on GitHub <ArrowUpRight size={13} />
-                </Link>
             </div>
         </section>
     );
 }
-
-

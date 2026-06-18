@@ -1,67 +1,53 @@
-const tools = [
-    ["01", "Frontend", "React, Next.js, TypeScript, JavaScript, HTML, CSS, Tailwind CSS, Bootstrap"],
-    ["02", "Backend", "Python, FastAPI, Laravel, PHP, REST API"],
-    ["03", "Database", "MySQL, PostgreSQL, MongoDB, SQL database design"],
-    ["04", "AI and Data", "Gemini API, Groq API, Scikit-learn, Pandas, NumPy, Random Forest, Streamlit"],
-    ["05", "Tools", "Git, GitHub, VS Code, Google Cloud, Google Colab, Jupyter Notebook"],
+const skillGroups = [
+    ["Core Stack", ["TypeScript / React", "Python / FastAPI", "Laravel / PHP", "SQL databases"]],
+    ["AI & Data", ["Gemini API", "Groq API", "Scikit-learn", "Pandas / NumPy"]],
+    ["Design", ["Responsive UI", "Technical writing", "Documentation", "Product thinking"]],
+    ["Tools", ["Git / GitHub", "VS Code", "Google Colab", "Jupyter Notebook"]],
 ];
+
+const activities = ["Informatics Undergraduate", "Google Cloud Skills Boost", "AI Capstone Projects", "Open-Source Contributions"];
 
 export default function About() {
     return (
         <>
-            <section id="about" className="bg-[#F5F4F0] py-16 md:py-28">
-                <div className="container-grid">
-                    <div className="mb-10 flex items-center gap-4 border-b rule pb-5 md:mb-14 md:gap-5">
-                        <span className="font-caption text-[13px] text-[#727974]">02</span>
-                        <div className="h-px w-8 bg-[#c1c8c2]" />
-                        <h2 className="font-display text-3xl tracking-[-0.04em] text-[#1b1c1a] sm:text-4xl md:text-5xl">About me</h2>
+            <section id="about" className="border-t border-black/12 bg-[#ecebe7] py-16 md:py-24">
+                <div className="mx-auto grid w-[min(100%-40px,1120px)] grid-cols-1 gap-12 md:grid-cols-[1fr_1.05fr] md:gap-20">
+                    <div>
+                        <h2 className="font-display text-4xl font-medium tracking-[-0.055em] text-black md:text-5xl">Technical Philosophy</h2>
+                        <div className="mt-8 space-y-6 text-[15px] leading-7 text-black/62">
+                            <p>
+                                As an Informatics undergraduate, I believe useful software is built by connecting implementation details with real user needs. I do not just write code; I design systems that solve specific problems and can be explained clearly.
+                            </p>
+                            <p>
+                                My approach is iterative, data-aware, and documentation-driven. I am especially interested in AI-assisted applications, machine learning workflows, frontend development, backend development, and open-source documentation.
+                            </p>
+                        </div>
+                        <blockquote className="mt-8 max-w-md border-l border-[#284739] pl-5 font-display text-2xl font-medium leading-tight tracking-[-0.035em] text-black/70">
+                            Turning academic ideas into functional, documented reality.
+                        </blockquote>
                     </div>
 
-                    <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-16">
-                        <div className="md:col-span-5">
-                            <p className="text-[15px] leading-8 text-[#1b1c1a] sm:text-[17px]">
-                                I am an Informatics undergraduate who enjoys learning through practical projects. My current interests include generative AI, machine learning, frontend development, backend development, and open-source documentation.
-                            </p>
-                            <blockquote className="mt-8 border-l border-[#284739] pl-5 font-display text-2xl italic leading-tight text-[#5f5e5e] sm:mt-9 sm:text-3xl">
-                                Turning academic ideas into functional, documented reality.
-                            </blockquote>
-
-                            <div className="mt-10 space-y-6 font-caption text-[13px] uppercase tracking-[0.13em] text-[#727974]">
-                                <div>
-                                    <p className="mb-2 text-[#c1c8c2]">Education</p>
-                                    <p className="text-[#1b1c1a]">Informatics Undergraduate</p>
-                                    <p>Indonesia</p>
-                                </div>
-                                <div>
-                                    <p className="mb-2 text-[#c1c8c2]">Activity</p>
-                                    <p className="normal-case tracking-normal text-[#5f5e5e]">Currently developing academic and personal projects involving AI, data, and web applications.</p>
-                                </div>
+                    <div className="grid grid-cols-1 gap-x-12 gap-y-10 sm:grid-cols-2">
+                        {skillGroups.map(([title, items]) => (
+                            <div key={title as string}>
+                                <h3 className="font-caption text-[10px] uppercase tracking-[0.22em] text-black/45">{title}</h3>
+                                <ul className="mt-4 space-y-2 text-[14px] leading-6 text-black/62">
+                                    {(items as string[]).map((item) => (
+                                        <li key={item} className="flex gap-2 before:mt-[0.65em] before:h-1 before:w-1 before:shrink-0 before:rounded-full before:bg-black/40">{item}</li>
+                                    ))}
+                                </ul>
                             </div>
-                        </div>
-
-                        <div className="md:col-span-7">
-                            <h3 className="font-display mb-6 text-2xl tracking-[-0.04em] text-[#1b1c1a] sm:mb-8 sm:text-3xl">Tools I work with</h3>
-                            <div className="border-y rule">
-                                {tools.map(([number, title, items]) => (
-                                    <div key={title} className="grid grid-cols-1 gap-2 border-b rule py-5 last:border-b-0 sm:grid-cols-12 sm:gap-4">
-                                        <span className="font-caption text-[12px] text-[#727974] sm:col-span-1 sm:text-[13px]">{number}</span>
-                                        <p className="font-caption text-[12px] uppercase tracking-[0.12em] text-[#1b1c1a] sm:col-span-4 sm:text-[13px] sm:tracking-[0.14em]">{title}</p>
-                                        <p className="font-caption text-[12px] leading-6 text-[#5f5e5e] sm:col-span-7 sm:text-[13px]">{items}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
-            <div className="border-y rule bg-[#F5F4F0] py-4">
-                <div className="container-grid hide-scrollbar flex items-center gap-6 overflow-x-auto">
-                    {["Informatics Undergraduate", "Google Cloud Skills Boost", "AI Capstone Projects", "Open-Source Contributions"].map((item, index) => (
-                        <div key={item} className="flex shrink-0 items-center gap-3">
-                            <span className="font-caption text-[13px] text-[#727974]">{String(index + 1).padStart(2, "0")}</span>
-                            <span className="tagline-item">{item}</span>
-                            {index < 3 && <span className="ml-3 h-4 w-px bg-[#c1c8c2]" />}
+            <div className="site-texture border-y border-black/12 bg-[#f7f6f2] py-4">
+                <div className="hide-scrollbar mx-auto flex w-[min(100%-40px,1120px)] items-center gap-4 overflow-x-auto md:justify-between">
+                    {activities.map((item, index) => (
+                        <div key={item} className="flex shrink-0 items-center gap-3 font-caption text-[10px] uppercase tracking-[0.18em] text-black/50">
+                            <span className="text-black/35">{String(index + 1).padStart(2, "0")}</span>
+                            <span>{item}</span>
                         </div>
                     ))}
                 </div>

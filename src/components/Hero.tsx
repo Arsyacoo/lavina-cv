@@ -1,55 +1,57 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown } from "lucide-react";
+import { Briefcase, MapPin, Sparkles } from "lucide-react";
 
 export default function Hero() {
     return (
-        <section id="hero" className="bg-[#FAF9F5]">
-            <div className="container-grid py-6 sm:py-10 md:py-14">
-                <div className="relative px-0 py-7 sm:py-10 md:py-14">
-                    <div className="grid grid-cols-1 items-start gap-6 sm:gap-8 md:grid-cols-12 md:items-center md:gap-10">
-                        <div className="md:col-span-8">
-                            <div className="mb-4 flex items-center sm:mb-5">                                <p className="caption">Lavina Arsya Aryanto — Informatics undergraduate</p>
-                            </div>
-                            <h1 className="font-display max-w-4xl text-[clamp(2.55rem,11.5vw,4.35rem)] leading-[0.95] tracking-[-0.04em] text-[#1b1c1a] md:text-[4.35rem]">
-                                I build practical digital products using <em className="text-[#284739]">web technology, data, and artificial intelligence.</em>
-                            </h1>
-                            <p className="mt-5 max-w-xl text-[15px] leading-7 text-[#5f5e5e] sm:mt-6 sm:text-[17px]">
-                                I am an Informatics student interested in AI-assisted applications, machine learning, and modern web development. I enjoy turning academic ideas into functional and documented projects.
-                            </p>
-                            <div className="mt-7 flex flex-row flex-wrap items-center gap-x-5 gap-y-4 sm:mt-8">
-                                <Link href="#projects" className="primary-button">View selected work</Link>
-                                <Link href="/Lavina-Arsya-Resume.pdf" download className="text-link">Download resume <ArrowDown size={13} /></Link>
-                            </div>
+        <section id="hero" className="site-texture bg-[#f7f6f2]">
+            <div className="mx-auto w-[min(100%-40px,1120px)] pb-24 pt-24 md:pb-32 md:pt-28">
+                <div className="grid grid-cols-1 items-start gap-12 sm:grid-cols-[1fr_240px] sm:gap-8 md:grid-cols-[1.02fr_0.78fr] md:gap-16">
+                    <div className="max-w-[620px] pt-1">
+                        <div className="mb-8 flex flex-wrap items-center gap-3 font-caption text-[10px] uppercase tracking-[0.22em] text-black/55">
+                            <span className="h-1.5 w-1.5 rounded-full bg-[#284739]" />
+                            <span>Informatics Undergraduate</span>
+                            <span aria-hidden="true">/</span>
+                            <span>AI & Web Development</span>
                         </div>
 
-                        <div className="md:col-span-4">
-                            <div className="mx-auto mt-1 w-full max-w-[300px] min-[420px]:max-w-[330px] sm:mt-2 md:ml-auto md:mr-0 md:mt-0 md:max-w-[300px]">
-                                <div className="relative aspect-[4/5] overflow-hidden bg-[#e3e2df]">
-                                    <Image src="/profile-hero.webp" alt="Lavina Arsya Aryanto portrait" fill priority className="object-cover object-center" />
-                                </div>
-                            </div>
+                        <h1 className="font-display text-[clamp(2.55rem,5.7vw,4.85rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-black">
+                            I build practical digital products with code, data, and AI.
+                        </h1>
+
+                        <p className="mt-7 max-w-[560px] text-[15px] leading-7 text-black/58 md:text-[16px]">
+                            Focused on developing functional web applications, AI-assisted tools, and machine learning projects that solve real problems. Currently bridging software engineering, data workflows, and human-centered design.
+                        </p>
+
+                        <div className="mt-8 grid max-w-[610px] grid-cols-1 border-y border-black/12 py-4 font-caption text-[10px] uppercase tracking-[0.18em] text-black/65 sm:grid-cols-3">
+                            <div className="flex items-center gap-2 py-2 sm:py-0"><MapPin size={13} /> Indonesia</div>
+                            <div className="flex items-center gap-2 py-2 sm:py-0"><Briefcase size={13} /> Open to Internship</div>
+                            <div className="flex items-center gap-2 py-2 sm:py-0"><Sparkles size={13} /> Collaboration</div>
+                        </div>
+
+                        <div className="mt-8 flex flex-wrap gap-4">
+                            <Link href="#projects" className="inline-flex h-11 items-center justify-center bg-black px-6 font-caption text-[10px] font-semibold uppercase tracking-[0.16em] transition-transform hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0" style={{ color: "#f7f6f2" }}>
+                                View selected work
+                            </Link>
+                            <Link href="#contact" className="inline-flex h-11 items-center justify-center border border-black/25 px-6 font-caption text-[10px] uppercase tracking-[0.18em] text-black transition-colors hover:border-black hover:bg-black hover:text-white">
+                                Get in touch
+                            </Link>
                         </div>
                     </div>
 
-                    <div className="mt-9 flex max-w-2xl flex-wrap items-center gap-x-5 gap-y-2 border-t border-[#c1c8c2]/35 pt-5 font-caption text-[11px] uppercase tracking-[0.14em] text-[#727974] sm:mt-12 sm:text-[13px] sm:tracking-[0.18em]">
-                        <span>Indonesia</span>
-                        <span>Informatics</span>
-                        <span>Open to work</span>
+                    <div className="justify-self-center sm:mt-10 sm:justify-self-end md:mt-8 md:justify-self-end">
+                        <div className="relative w-full max-w-[340px] bg-[#d8d7d2] sm:max-w-[240px] md:w-[410px] md:max-w-[410px]">
+                            <div className="relative aspect-[4/5] overflow-hidden">
+                                <Image src="/profile.webp" alt="Portrait of Lavina Arsya Aryanto" fill priority sizes="(max-width: 640px) 340px, (max-width: 768px) 240px, 410px" className="object-cover object-center grayscale" />
+                            </div>
+                        </div>
+                        <div className="mt-3 flex justify-between font-caption text-[9px] uppercase tracking-[0.2em] text-black/45">
+                            <span>Portrait // 2026</span>
+                            <span>Based in Indonesia</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     );
 }
-
-
-
-
-
-
-
-
-
-
-

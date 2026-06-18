@@ -1,10 +1,12 @@
-﻿export default function Footer() {
+import Link from "next/link";
+
+export default function Footer() {
     return (
-        <footer className="border-t border-[#FAF9F5]/10 bg-[#202020] py-8 text-[#FAF9F5]">
-            <div className="container-grid font-caption text-[13px] tracking-[0.12em] text-[#FAF9F5]/45">
-                © 2026 Lavina Arsya Aryanto. All rights reserved.
+        <footer className="bg-[#f7f6f2] py-10 text-black">
+            <div className="mx-auto flex w-[min(100%-40px,1120px)] flex-col gap-5 font-caption text-[10px] uppercase tracking-[0.18em] text-black/45 md:flex-row md:items-center md:justify-between">
+                <Link href="#hero" className="font-display text-xl font-semibold tracking-[-0.04em] text-black/55 transition-colors hover:text-black">LA</Link>
+                <p>Copyright 2026 Lavina Arsya Aryanto - All rights reserved.</p>
             </div>
         </footer>
     );
 }
-
