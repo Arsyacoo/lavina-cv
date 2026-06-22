@@ -5,8 +5,8 @@ import { Briefcase, MapPin, Sparkles } from "lucide-react";
 export default function Hero() {
     return (
         <section id="hero" className="site-texture bg-[#f7f6f2]">
-            <div className="mx-auto w-[min(100%-40px,1120px)] pb-24 pt-24 md:pb-32 md:pt-28">
-                <div className="grid grid-cols-1 items-start gap-12 sm:grid-cols-[1fr_240px] sm:gap-8 md:grid-cols-[1.02fr_0.78fr] md:gap-16">
+            <div className="mx-auto w-[min(100%-28px,1120px)] pb-20 pt-20 sm:w-[min(100%-40px,1120px)] md:pb-32 md:pt-28">
+                <div className="grid grid-cols-[minmax(0,1fr)_112px] items-start gap-4 min-[430px]:grid-cols-[minmax(0,1fr)_150px] min-[430px]:gap-6 sm:grid-cols-[1fr_240px] sm:gap-8 md:grid-cols-[1.02fr_0.78fr] md:gap-16">
                     <div className="max-w-[620px] pt-1">
                         <div className="mb-8 flex flex-wrap items-center gap-3 font-caption text-[10px] uppercase tracking-[0.22em] text-black/55">
                             <span className="h-1.5 w-1.5 rounded-full bg-[#284739]" />
@@ -15,11 +15,11 @@ export default function Hero() {
                             <span>AI & Web Development</span>
                         </div>
 
-                        <h1 className="font-display text-[clamp(2.55rem,5.7vw,4.85rem)] font-semibold leading-[0.98] tracking-[-0.045em] text-black">
+                        <h1 className="font-display text-[clamp(2rem,8.4vw,2.55rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-black sm:text-[clamp(2.55rem,5.7vw,4.85rem)]">
                             I build practical digital products with code, data, and AI.
                         </h1>
 
-                        <p className="mt-7 max-w-[560px] text-[15px] leading-7 text-black/58 md:text-[16px]">
+                        <p className="mt-6 max-w-[560px] text-[14px] leading-7 text-black/58 sm:mt-7 sm:text-[15px] md:text-[16px]">
                             Focused on developing functional web applications, AI-assisted tools, and machine learning projects that solve real problems. Currently bridging software engineering, data workflows, and human-centered design.
                         </p>
 
@@ -39,13 +39,13 @@ export default function Hero() {
                         </div>
                     </div>
 
-                    <div className="justify-self-center sm:mt-10 sm:justify-self-end md:mt-8 md:justify-self-end">
-                        <div className="relative w-full max-w-[340px] bg-[#d8d7d2] sm:max-w-[240px] md:w-[410px] md:max-w-[410px]">
+                    <div className="mt-12 justify-self-end min-[430px]:mt-10 sm:mt-10 sm:justify-self-end md:mt-8 md:justify-self-end">
+                        <div className="relative w-full max-w-[112px] bg-[#d8d7d2] min-[430px]:max-w-[150px] sm:max-w-[240px] md:w-[410px] md:max-w-[410px]">
                             <div className="relative aspect-[4/5] overflow-hidden">
-                                <Image src="/profile.webp" alt="Portrait of Lavina Arsya Aryanto" fill priority sizes="(max-width: 640px) 340px, (max-width: 768px) 240px, 410px" className="object-cover object-center grayscale" />
+                                <Image src="/profile.webp" alt="Portrait of Lavina Arsya Aryanto" fill priority sizes="(max-width: 430px) 112px, (max-width: 640px) 150px, (max-width: 768px) 240px, 410px" className="object-cover object-center grayscale" />
                             </div>
                         </div>
-                        <div className="mt-3 flex justify-between font-caption text-[9px] uppercase tracking-[0.2em] text-black/45">
+                        <div className="mt-3 hidden justify-between font-caption text-[9px] uppercase tracking-[0.2em] text-black/45 min-[430px]:flex">
                             <span>Portrait // 2026</span>
                             <span>Based in Indonesia</span>
                         </div>
