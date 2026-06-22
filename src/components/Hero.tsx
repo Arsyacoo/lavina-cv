@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Briefcase, MapPin, Sparkles } from "lucide-react";
@@ -8,38 +9,38 @@ export default function Hero() {
             <div className="mx-auto w-[min(100%-28px,1120px)] pb-20 pt-20 sm:w-[min(100%-40px,1120px)] md:pb-32 md:pt-28">
                 <div className="grid grid-cols-[minmax(0,1fr)_112px] items-start gap-4 min-[430px]:grid-cols-[minmax(0,1fr)_150px] min-[430px]:gap-6 sm:grid-cols-[1fr_240px] sm:gap-8 md:grid-cols-[1.02fr_0.78fr] md:gap-16">
                     <div className="max-w-[620px] pt-1">
-                        <div className="mb-8 flex flex-wrap items-center gap-3 font-caption text-[10px] uppercase tracking-[0.22em] text-black/55">
+                        <div className="mb-8 flex flex-wrap items-center gap-3 font-caption text-[10px] uppercase tracking-[0.22em] text-black/55 animate-in-soft" style={{ "--enter-delay": "40ms" } as CSSProperties}>
                             <span className="h-1.5 w-1.5 rounded-full bg-[#284739]" />
                             <span>Informatics Undergraduate</span>
                             <span aria-hidden="true">/</span>
                             <span>AI & Web Development</span>
                         </div>
 
-                        <h1 className="font-display text-[clamp(2rem,8.4vw,2.55rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-black sm:text-[clamp(2.55rem,5.7vw,4.85rem)]">
+                        <h1 className="font-display text-[clamp(2rem,8.4vw,2.55rem)] font-semibold leading-[0.98] tracking-[-0.05em] text-black sm:text-[clamp(2.55rem,5.7vw,4.85rem)] animate-in-soft" style={{ "--enter-delay": "140ms" } as CSSProperties}>
                             I build practical digital products with code, data, and AI.
                         </h1>
 
-                        <p className="mt-6 max-w-[560px] text-[14px] leading-7 text-black/58 sm:mt-7 sm:text-[15px] md:text-[16px]">
+                        <p className="mt-6 max-w-[560px] text-[14px] leading-7 text-black/58 sm:mt-7 sm:text-[15px] md:text-[16px] animate-in-soft" style={{ "--enter-delay": "250ms" } as CSSProperties}>
                             Focused on developing functional web applications, AI-assisted tools, and machine learning projects that solve real problems. Currently bridging software engineering, data workflows, and human-centered design.
                         </p>
 
-                        <div className="mt-8 grid max-w-[610px] grid-cols-1 border-y border-black/12 py-4 font-caption text-[10px] uppercase tracking-[0.18em] text-black/65 sm:grid-cols-3">
+                        <div className="mt-8 grid max-w-[610px] grid-cols-1 border-y border-black/12 py-4 font-caption text-[10px] uppercase tracking-[0.18em] text-black/65 sm:grid-cols-3 animate-in-soft" style={{ "--enter-delay": "340ms" } as CSSProperties}>
                             <div className="flex items-center gap-2 py-2 sm:py-0"><MapPin size={13} /> Indonesia</div>
                             <div className="flex items-center gap-2 py-2 sm:py-0"><Briefcase size={13} /> Open to Internship</div>
                             <div className="flex items-center gap-2 py-2 sm:py-0"><Sparkles size={13} /> Collaboration</div>
                         </div>
 
-                        <div className="mt-8 flex flex-wrap gap-4">
-                            <Link href="#projects" className="inline-flex h-11 items-center justify-center bg-black px-6 font-caption text-[10px] font-semibold uppercase tracking-[0.16em] transition-transform hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0" style={{ color: "#f7f6f2" }}>
+                        <div className="mt-8 flex flex-wrap gap-4 animate-in-soft" style={{ "--enter-delay": "430ms" } as CSSProperties}>
+                            <Link href="#projects" className="inline-flex h-11 items-center justify-center bg-black px-6 font-caption text-[10px] font-semibold uppercase tracking-[0.16em] transition-transform duration-200 hover:-translate-y-px focus-visible:-translate-y-px motion-reduce:transition-none motion-reduce:hover:translate-y-0" style={{ color: "#f7f6f2" }}>
                                 View selected work
                             </Link>
-                            <Link href="#contact" className="inline-flex h-11 items-center justify-center border border-black/25 px-6 font-caption text-[10px] uppercase tracking-[0.18em] text-black transition-colors hover:border-black hover:bg-black hover:text-white">
+                            <Link href="#contact" className="inline-flex h-11 items-center justify-center border border-black/25 px-6 font-caption text-[10px] uppercase tracking-[0.18em] text-black transition-all duration-200 hover:-translate-y-px hover:border-black hover:bg-black hover:text-white focus-visible:-translate-y-px motion-reduce:hover:translate-y-0">
                                 Get in touch
                             </Link>
                         </div>
                     </div>
 
-                    <div className="mt-12 justify-self-end min-[430px]:mt-10 sm:mt-10 sm:justify-self-end md:mt-8 md:justify-self-end">
+                    <div className="mt-12 justify-self-end min-[430px]:mt-10 sm:mt-10 sm:justify-self-end md:mt-8 md:justify-self-end animate-in-soft" style={{ "--enter-delay": "520ms" } as CSSProperties}>
                         <div className="relative w-full max-w-[112px] bg-[#d8d7d2] min-[430px]:max-w-[150px] sm:max-w-[240px] md:w-[410px] md:max-w-[410px]">
                             <div className="relative aspect-[4/5] overflow-hidden">
                                 <Image src="/profile.webp" alt="Portrait of Lavina Arsya Aryanto" fill priority sizes="(max-width: 430px) 112px, (max-width: 640px) 150px, (max-width: 768px) 240px, 410px" className="object-cover object-center grayscale" />
