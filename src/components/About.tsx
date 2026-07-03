@@ -12,9 +12,10 @@ const activities = ["Informatics Undergraduate", "Google Cloud Skills Boost", "A
 export default function About() {
     return (
         <>
-            <section id="about" className="border-t border-black/12 bg-[#ecebe7] py-16 md:py-24">
+            <section id="about" className="section-divider border-t border-black/12 bg-[#ecebe7] py-16 md:py-24">
                 <div className="mx-auto grid w-[min(100%-40px,1120px)] grid-cols-1 gap-12 md:grid-cols-[1fr_1.05fr] md:gap-20">
                     <Reveal>
+                        <p className="mb-3 font-caption text-[10px] uppercase tracking-[0.2em] text-black/35">02 / Technical Philosophy</p>
                         <h2 className="font-display text-4xl font-medium tracking-[-0.055em] text-black md:text-5xl">Technical Philosophy</h2>
                         <div className="mt-8 space-y-6 text-[15px] leading-7 text-black/62">
                             <p>

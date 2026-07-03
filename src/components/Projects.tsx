@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Reveal from "./Reveal";
+import TiltCard from "./TiltCard";
 
 const projects = [
     {
@@ -12,6 +13,11 @@ const projects = [
         title: "AI-Powered Healthcare Assistant",
         description: "A healthcare education prototype that provides symptom guidance, AI chat, medication information, and emergency red-flag detection.",
         tags: ["React", "TypeScript", "Gemini API"],
+        facts: [
+            ["Problem", "Health information can feel scattered and hard to understand."],
+            ["Approach", "Built guided symptom, medication, and AI chat flows."],
+            ["Impact", "Turns healthcare education into a clearer support tool."],
+        ],
         image: "/ai-healthcare.webp",
         github: "https://github.com/Arsyacoo/AI-Healthcare",
     },
@@ -23,6 +29,11 @@ const projects = [
         title: "PDF Insight AI",
         description: "A document analysis application that allows users to upload PDF files, ask questions, review source references, and export generated reports.",
         tags: ["React", "FastAPI", "Groq API", "Python"],
+        facts: [
+            ["Problem", "Reviewing long PDF documents takes time and context."],
+            ["Approach", "Connected upload, Q&A, source references, and reports."],
+            ["Impact", "Helps users understand documents faster and more clearly."],
+        ],
         image: "/pdf-insight.webp",
         github: "https://github.com/Arsyacoo/PDF-Insight-AI",
     },
@@ -34,6 +45,11 @@ const projects = [
         title: "Digital Transaction Fraud Detection",
         description: "A machine-learning project using Random Forest to identify potentially fraudulent financial transactions and display model evaluation results.",
         tags: ["Python", "Scikit-learn", "Pandas", "Streamlit"],
+        facts: [
+            ["Problem", "Transaction anomalies need early and explainable detection."],
+            ["Approach", "Trained Random Forest and visualized model evaluation."],
+            ["Impact", "Makes fraud patterns easier to inspect and communicate."],
+        ],
         image: "/fraud-detection.webp",
         github: "https://github.com/Arsyacoo/Fraud-Transaction-Detection-Random-Forest",
     },
@@ -41,10 +57,11 @@ const projects = [
 
 export default function Projects() {
     return (
-        <section id="projects" className="site-texture border-t border-black/12 bg-[#f7f6f2] py-16 md:py-24">
+        <section id="projects" className="section-divider site-texture border-t border-black/12 bg-[#f7f6f2] py-16 md:py-24">
             <div className="mx-auto w-[min(100%-40px,1120px)]">
                 <Reveal className="mb-16 grid grid-cols-1 gap-6 border-t border-black/14 pt-14 md:grid-cols-[1fr_auto] md:items-start">
                     <div>
+                        <p className="mb-3 font-caption text-[10px] uppercase tracking-[0.2em] text-black/35">01 / Selected Work</p>
                         <h2 className="font-display text-4xl font-medium tracking-[-0.055em] text-black md:text-5xl">Selected Work</h2>
                         <p className="mt-3 font-caption text-[10px] uppercase tracking-[0.22em] text-black/45">Projects that define my technical direction</p>
                     </div>
@@ -57,17 +74,33 @@ export default function Projects() {
                         return (
                             <Reveal as="article" key={project.title} delay={index * 120} className={`grid grid-cols-1 items-center gap-10 md:gap-16 ${reverse ? "md:grid-cols-[0.92fr_1.08fr]" : "md:grid-cols-[1.08fr_0.92fr]"}`}>
                                 <Link href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} project`} className={`${reverse ? "md:order-2" : ""} group block`}>
-                                    <div className="border border-black/10 bg-[#f7f6f2] p-0 shadow-[0_18px_42px_rgba(20,20,18,0.08)] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-black/22 motion-reduce:transition-none motion-reduce:group-hover:translate-y-0">
-                                        <div className="relative aspect-[16/9] overflow-hidden bg-white">
-                                            <Image src={project.image} alt={`${project.title} interface preview`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-contain object-center p-2 contrast-[1.03] saturate-[1.08] transition duration-500 group-hover:scale-[1.01] motion-reduce:transition-none motion-reduce:group-hover:scale-100 sm:p-3" />
+                                    <TiltCard>
+                                        <div className="project-mockup border border-black/10 bg-[#f7f6f2] p-0 shadow-[0_18px_42px_rgba(20,20,18,0.08)] transition-all duration-300 group-hover:border-black/22 motion-reduce:transition-none">
+                                            <div className="project-mockup-bar" aria-hidden="true">
+                                                <span />
+                                                <span />
+                                                <span />
+                                            </div>
+                                            <div className="project-mockup-screen relative aspect-[16/9] overflow-hidden bg-white">
+                                                <Image src={project.image} alt={`${project.title} interface preview`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-contain object-center p-2 contrast-[1.03] saturate-[1.08] transition duration-500 group-hover:scale-[1.008] motion-reduce:transition-none motion-reduce:group-hover:scale-100 sm:p-3" />
+                                            </div>
                                         </div>
-                                    </div>
+                                    </TiltCard>
                                 </Link>
 
                                 <div className={`${reverse ? "md:order-1" : ""} md:px-4`}>
                                     <p className="font-caption text-[10px] uppercase tracking-[0.22em] text-black/45">{project.number} / {project.type}</p>
                                     <h3 className="mt-5 inline-block font-display text-4xl font-medium tracking-[-0.05em] text-black md:text-[2.65rem] md:leading-[1.02] link-underline">{project.title}</h3>
                                     <p className="mt-5 max-w-[560px] text-[15px] leading-7 text-black/62 md:text-[16px] md:leading-8">{project.description}</p>
+
+                                    <div className="mt-6 grid max-w-[560px] gap-2">
+                                        {project.facts.map(([label, value]) => (
+                                            <div key={label} className="project-fact grid gap-1 border-l border-black/12 pl-3 text-[13px] leading-6 text-black/58 sm:grid-cols-[86px_1fr] sm:gap-4">
+                                                <span className="font-caption text-[9px] uppercase tracking-[0.16em] text-black/40">{label}</span>
+                                                <span>{value}</span>
+                                            </div>
+                                        ))}
+                                    </div>
 
                                     <div className="mt-6 flex flex-wrap gap-2">
                                         {project.tags.map((tag) => (
