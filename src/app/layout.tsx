@@ -1,12 +1,9 @@
-﻿import type { Metadata } from "next";
-import { IBM_Plex_Mono, Inter, Inter_Tight } from "next/font/google";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import type { Metadata, Viewport } from "next";
+import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
-const interTight = Inter_Tight({ variable: "--font-inter-tight", subsets: ["latin"], display: "swap" });
-const plexMono = IBM_Plex_Mono({ variable: "--font-plex-mono", subsets: ["latin"], weight: ["400", "500", "600"], display: "swap" });
+const bricolage = Bricolage_Grotesque({ variable: "--font-bricolage", subsets: ["latin"], axes: ["opsz"], display: "swap" });
+const hanken = Hanken_Grotesk({ variable: "--font-hanken", subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.arsyalavina.web.id"),
@@ -30,9 +27,9 @@ export const metadata: Metadata = {
     siteName: "Lavina Arsya Aryanto Portfolio",
     images: [
       {
-        url: "/profile.webp",
-        width: 760,
-        height: 1013,
+        url: "/portrait.webp",
+        width: 1122,
+        height: 1402,
         alt: "Lavina Arsya Aryanto portrait",
       },
     ],
@@ -43,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Lavina Arsya Aryanto | Full-Stack Developer & AI/ML Enthusiast",
     description: "Portfolio of Lavina Arsya Aryanto, an Informatics undergraduate focused on AI-assisted applications, machine learning, and full-stack web development.",
-    images: ["/profile.webp"],
+    images: ["/portrait.webp"],
   },
   icons: {
     icon: [
@@ -54,13 +51,15 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#172d55",
+};
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${interTight.variable} ${plexMono.variable} antialiased`}>
-        <Navbar />
+    <html lang="en">
+      <body className={`${bricolage.variable} ${hanken.variable}`}>
         {children}
-        <Footer />
       </body>
     </html>
   );
