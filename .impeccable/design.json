@@ -1,0 +1,406 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-04T07:40:02.108Z",
+  "title": "Design System: Lavina Arsya Aryanto",
+  "extensions": {
+    "colorMeta": {
+      "nila": {
+        "role": "primary",
+        "displayName": "Nila Drench",
+        "canonical": "oklch(35.5% 0.091 261)",
+        "tonalRamp": [
+          "#000430",
+          "#07214f",
+          "#233e70",
+          "#405d91",
+          "#5e7db4",
+          "#7e9fd8",
+          "#abc5f2",
+          "#e3efff"
+        ]
+      },
+      "nila-deep": {
+        "role": "primary",
+        "displayName": "Deep Nila",
+        "canonical": "oklch(30.3% 0.078 261)",
+        "tonalRamp": [
+          "#00062b",
+          "#0d2249",
+          "#283f69",
+          "#455d8a",
+          "#637eac",
+          "#839fcf",
+          "#abc5f2",
+          "#e3efff"
+        ]
+      },
+      "nila-mid": {
+        "role": "primary",
+        "displayName": "Second-Dip Nila",
+        "canonical": "oklch(41.4% 0.098 260)",
+        "tonalRamp": [
+          "#000233",
+          "#042052",
+          "#203e73",
+          "#3d5d95",
+          "#5b7db7",
+          "#7b9fdc",
+          "#abc5f2",
+          "#e3efff"
+        ]
+      },
+      "nila-pale": {
+        "role": "primary",
+        "displayName": "First-Dip Nila",
+        "canonical": "oklch(90.5% 0.021 252)",
+        "tonalRamp": [
+          "#050c14",
+          "#1d252e",
+          "#38414b",
+          "#555f6a",
+          "#747e8a",
+          "#95a0ac",
+          "#bbc5d2",
+          "#e5f0fd"
+        ]
+      },
+      "soga": {
+        "role": "secondary",
+        "displayName": "Soga Brown",
+        "canonical": "oklch(41.4% 0.075 52)",
+        "tonalRamp": [
+          "#200000",
+          "#3f1700",
+          "#5e3316",
+          "#7f5134",
+          "#a17153",
+          "#c49273",
+          "#e9b89a",
+          "#ffeadc"
+        ]
+      },
+      "soga-deep": {
+        "role": "secondary",
+        "displayName": "Deep Soga",
+        "canonical": "oklch(35.3% 0.063 51)",
+        "tonalRamp": [
+          "#1e0200",
+          "#3b1902",
+          "#5a351e",
+          "#7a533c",
+          "#9c735a",
+          "#bf947a",
+          "#e6b99f",
+          "#ffe9dd"
+        ]
+      },
+      "isen": {
+        "role": "tertiary",
+        "displayName": "Isen Gold",
+        "canonical": "oklch(78.8% 0.119 81)",
+        "tonalRamp": [
+          "#210000",
+          "#3f1800",
+          "#5e3600",
+          "#7f5500",
+          "#a0750c",
+          "#c3963c",
+          "#dbc090",
+          "#f9edd8"
+        ]
+      },
+      "isen-light": {
+        "role": "tertiary",
+        "displayName": "Pale Isen",
+        "canonical": "oklch(83.1% 0.108 84)",
+        "tonalRamp": [
+          "#1f0100",
+          "#3c1b00",
+          "#5a3800",
+          "#7a5700",
+          "#9b7722",
+          "#be9848",
+          "#dac190",
+          "#f8edd8"
+        ]
+      },
+      "mori": {
+        "role": "neutral",
+        "displayName": "Unwaxed Mori",
+        "canonical": "oklch(95.9% 0.007 247)",
+        "tonalRamp": [
+          "#090b0e",
+          "#212427",
+          "#3d4043",
+          "#5b5e61",
+          "#7a7e81",
+          "#9b9fa3",
+          "#c1c5c8",
+          "#ebeff3"
+        ]
+      },
+      "wax": {
+        "role": "neutral",
+        "displayName": "Wax Resist",
+        "canonical": "oklch(95.9% 0.010 87)",
+        "tonalRamp": [
+          "#0d0b07",
+          "#26241f",
+          "#423f3a",
+          "#605d57",
+          "#807d77",
+          "#a19e98",
+          "#c7c4bd",
+          "#f1eee7"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Nila Ink",
+        "canonical": "oklch(29.8% 0.074 261)",
+        "tonalRamp": [
+          "#000729",
+          "#0f2247",
+          "#2a3f67",
+          "#465d87",
+          "#657eaa",
+          "#859fcd",
+          "#acc5f2",
+          "#e4efff"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Faded Ink",
+        "canonical": "oklch(43.8% 0.067 261)",
+        "tonalRamp": [
+          "#000827",
+          "#112344",
+          "#2b3f63",
+          "#485e84",
+          "#677ea6",
+          "#879fc9",
+          "#acc5f0",
+          "#e3efff"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The name in the hero only; the contact headline uses a sibling clamp(2.5rem, 6vw, 4.75rem) at line-height 1."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Bath titles (Work, Path, Skills): 3rem mobile, 3.75rem desktop."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Project names: 1.875rem mobile, 2.25rem desktop."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Section intros and project taglines."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text; project points at 16.5px."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Roles, stack lines, nav, index links, chips; years in tabular numerals."
+      }
+    },
+    "shadows": [
+      {
+        "name": "screenshot-drop",
+        "value": "0 6px 18px -6px rgba(23,45,85,0.35)",
+        "purpose": "The only shadow in the system: lifts a white app screenshot off its pale nila mat."
+      },
+      {
+        "name": "portrait-ring",
+        "value": "0 0 0 8px #1f3a6b, 0 0 0 9px rgba(244,241,234,0.3)",
+        "purpose": "A 1px wax ring offset 8px around the hero portrait, standing in for a shadow."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-press",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Pinggiran stamp press-in: 420ms opacity, scale 1.35 to 1 and 2px blur to 0, staggered 28ms per stamp from the band centre outward. Runs once, only for bands below the fold at load."
+      },
+      {
+        "name": "link-underline",
+        "value": "160ms ease-out",
+        "purpose": "Underline colour from 40% current colour to full on hover."
+      },
+      {
+        "name": "state-color",
+        "value": "150ms cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Colour and border transitions on buttons, chips, nav links and the language toggle."
+      },
+      {
+        "name": "cecek-hover",
+        "value": "200ms",
+        "purpose": "Index dot scales 1.5x on hover; contact arrow nudges up-right."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Stamps render pressed with no transition; smooth scroll is off."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (Isen)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The gold action on a dark bath: email in the hero, resume in the header.",
+      "html": "<div class=\"ds-bath-nila\"><a class=\"ds-btn-primary\" href=\"#\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\"/><path d=\"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7\"/></svg>Email me</a></div>",
+      "css": ".ds-bath-nila{background:var(--nila,#1f3a6b);padding:24px} .ds-btn-primary{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 24px;border-radius:3px;background:var(--isen,#e0b25a);color:var(--nila-deep,#172d55);font-family:\"Hanken Grotesk\",system-ui,sans-serif;font-weight:600;text-decoration:none;transition:background-color 150ms} .ds-btn-primary:hover{background:var(--wax,#f4f1ea)} .ds-btn-primary:focus-visible{outline:2px solid var(--isen,#e0b25a);outline-offset:3px;border-radius:2px}"
+    },
+    {
+      "name": "Resist Button (Outline)",
+      "kind": "button",
+      "refersTo": "button-resist",
+      "description": "Secondary action on a dark bath: a wax hairline, no fill.",
+      "html": "<div class=\"ds-bath-nila\"><a class=\"ds-btn-resist\" href=\"#\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><path d=\"m7 10 5 5 5-5\"/><path d=\"M12 15V3\"/></svg>Download resume</a></div>",
+      "css": ".ds-bath-nila{background:var(--nila,#1f3a6b);padding:24px} .ds-btn-resist{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 24px;border-radius:3px;border:1px solid rgba(244,241,234,0.35);color:var(--wax,#f4f1ea);font-family:\"Hanken Grotesk\",system-ui,sans-serif;font-weight:600;text-decoration:none;transition:background-color 150ms,border-color 150ms} .ds-btn-resist:hover{border-color:var(--wax,#f4f1ea);background:rgba(244,241,234,0.1)} .ds-btn-resist:focus-visible{outline:2px solid var(--isen,#e0b25a);outline-offset:3px;border-radius:2px}"
+    },
+    {
+      "name": "Wax Button",
+      "kind": "button",
+      "refersTo": "button-wax",
+      "description": "The solid action in the soga contact bath.",
+      "html": "<div class=\"ds-bath-soga\"><a class=\"ds-btn-wax\" href=\"#\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><path d=\"m7 10 5 5 5-5\"/><path d=\"M12 15V3\"/></svg>Download resume</a></div>",
+      "css": ".ds-bath-soga{background:var(--soga,#6b3f22);padding:24px} .ds-btn-wax{display:inline-flex;align-items:center;gap:6px;height:44px;padding:0 20px;border-radius:3px;background:var(--wax,#f4f1ea);color:var(--soga-deep,#55311a);font-family:\"Hanken Grotesk\",system-ui,sans-serif;font-size:15px;font-weight:600;text-decoration:none;transition:background-color 150ms} .ds-btn-wax:hover{background:var(--isen,#e0b25a)} .ds-btn-wax:focus-visible{outline:2px solid var(--isen,#e0b25a);outline-offset:3px;border-radius:2px}"
+    },
+    {
+      "name": "Contact Chip",
+      "kind": "chip",
+      "refersTo": "button-resist",
+      "description": "Outlined contact links (WhatsApp, LinkedIn, GitHub) in the soga bath.",
+      "html": "<div class=\"ds-bath-soga\"><a class=\"ds-chip\" href=\"#\">LinkedIn</a><a class=\"ds-chip\" href=\"#\">GitHub</a></div>",
+      "css": ".ds-bath-soga{background:var(--soga,#6b3f22);padding:24px;display:flex;flex-wrap:wrap;gap:12px} .ds-chip{display:inline-flex;align-items:center;height:44px;padding:0 20px;border-radius:3px;border:1px solid rgba(244,241,234,0.3);color:var(--wax,#f4f1ea);font-family:\"Hanken Grotesk\",system-ui,sans-serif;font-size:15px;font-weight:600;text-decoration:none;transition:background-color 150ms,border-color 150ms} .ds-chip:hover{border-color:var(--wax,#f4f1ea);background:rgba(244,241,234,0.1)} .ds-chip:focus-visible{outline:2px solid var(--isen,#e0b25a);outline-offset:3px;border-radius:2px}"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "nav-bar",
+      "description": "Sticky deep-nila bar with the kawung maker's mark, section links and the EN/ID toggle.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-logo\" href=\"#\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 40 40\"><g fill=\"#e0b25a\"><ellipse cx=\"11\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 11 11)\"/><ellipse cx=\"29\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 29 11)\"/><ellipse cx=\"11\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 11 29)\"/><ellipse cx=\"29\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 29 29)\"/><circle cx=\"20\" cy=\"20\" r=\"2.2\"/></g><g fill=\"#172d55\"><circle cx=\"11\" cy=\"11\" r=\"1.6\"/><circle cx=\"29\" cy=\"11\" r=\"1.6\"/><circle cx=\"11\" cy=\"29\" r=\"1.6\"/><circle cx=\"29\" cy=\"29\" r=\"1.6\"/></g></svg>Lavina Arsya</a><span class=\"ds-links\"><a href=\"#\">Work</a><a href=\"#\">Path</a><a href=\"#\">Skills</a><a href=\"#\">Contact</a></span><button class=\"ds-lang\" type=\"button\" aria-label=\"Switch language\"><span class=\"on\">EN</span><span>ID</span></button></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;padding:0 20px;background:var(--nila-deep,#172d55);color:var(--wax,#f4f1ea)} .ds-logo{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;font-family:\"Bricolage Grotesque\",system-ui,sans-serif;font-size:18px;font-weight:600;letter-spacing:-0.025em} .ds-links{display:flex;gap:28px;font-family:\"Hanken Grotesk\",system-ui,sans-serif;font-size:15px} .ds-links a{color:rgba(244,241,234,0.8);text-decoration:none;transition:color 150ms} .ds-links a:hover{color:var(--wax,#f4f1ea)} .ds-lang{display:flex;height:36px;align-items:center;padding:2px;border:1px solid rgba(244,241,234,0.25);border-radius:3px;background:none;font-family:\"Hanken Grotesk\",system-ui,sans-serif;font-size:13px;font-weight:600;color:rgba(244,241,234,0.7);cursor:pointer} .ds-lang span{padding:4px 10px;border-radius:3px;transition:background-color 150ms,color 150ms} .ds-lang .on{background:var(--wax,#f4f1ea);color:var(--nila-deep,#172d55)} .ds-nav a:focus-visible{outline:2px solid var(--isen,#e0b25a);outline-offset:3px;border-radius:2px} .ds-lang:focus-visible{outline:2px solid var(--isen,#e0b25a);outline-offset:3px;border-radius:2px}"
+    },
+    {
+      "name": "Project Row",
+      "kind": "card",
+      "refersTo": null,
+      "description": "An open row on mori, not a card: margin column with role and year, title, tagline, stack line, underlined links.",
+      "html": "<div class=\"ds-bath-mori\"><article class=\"ds-row\"><dl class=\"ds-margin\"><dd class=\"r\">Full-Stack Developer</dd><dd class=\"y\">2026</dd></dl><div><h3>Sholatku</h3><p class=\"tag\">Prayer times and Quran PWA</p><p class=\"stack\"><b>Stack:</b> Next.js · TypeScript · Tailwind CSS</p><a class=\"ds-link\" href=\"#\">Repository <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a></div></article></div>",
+      "css": ".ds-bath-mori{background:var(--mori,#eef2f6);color:var(--ink,#182c52);padding:0 24px;font-family:\"Hanken Grotesk\",system-ui,sans-serif} .ds-row{display:grid;grid-template-columns:170px minmax(0,1fr);gap:40px;padding:40px 0;border-top:1px solid rgba(24,44,82,0.15);border-bottom:1px solid rgba(24,44,82,0.15)} .ds-margin{margin:0;font-size:15px} .ds-margin dd{margin:0 0 12px} .ds-margin .r{font-weight:600} .ds-margin .y{color:var(--ink-soft,#3d5277);font-variant-numeric:tabular-nums} .ds-row h3{margin:0;font-family:\"Bricolage Grotesque\",system-ui,sans-serif;font-size:36px;font-weight:700;line-height:1.25;letter-spacing:-0.02em} .ds-row .tag{margin:6px 0 0;font-size:18px;color:var(--ink-soft,#3d5277)} .ds-row .stack{margin:20px 0 0;font-size:15px;color:var(--ink-soft,#3d5277)} .ds-row .stack b{color:var(--ink,#182c52)} .ds-link{display:inline-flex;align-items:center;gap:4px;margin-top:20px;font-weight:600;color:var(--nila,#1f3a6b);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:0.25em;text-decoration-color:color-mix(in srgb,currentColor 40%,transparent);transition:text-decoration-color 160ms ease-out} .ds-link:hover{text-decoration-color:currentColor} .ds-link:focus-visible{outline:2px solid var(--isen,#e0b25a);outline-offset:3px;border-radius:2px}"
+    },
+    {
+      "name": "Pinggiran Band",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The kawung cap-stamp border pressed at every seam between two dye baths; stamps press in from the centre outward.",
+      "html": "<div class=\"ds-pinggiran\" aria-hidden=\"true\"><svg style=\"transform:rotate(-2.00deg) translateY(-1px);opacity:0.860;animation-delay:196ms\" viewBox=\"0 0 40 40\"><g fill=\"#2b4a80\"><ellipse cx=\"11\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 11 11)\"/><ellipse cx=\"29\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 29 11)\"/><ellipse cx=\"11\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 11 29)\"/><ellipse cx=\"29\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 29 29)\"/><circle cx=\"20\" cy=\"20\" r=\"2.2\"/></g><g fill=\"#d6e1ee\"><circle cx=\"11\" cy=\"11\" r=\"1.6\"/><circle cx=\"29\" cy=\"11\" r=\"1.6\"/><circle cx=\"11\" cy=\"29\" r=\"1.6\"/><circle cx=\"29\" cy=\"29\" r=\"1.6\"/></g></svg><svg style=\"transform:rotate(1.69deg) translateY(0px);opacity:0.959;animation-delay:168ms\" viewBox=\"0 0 40 40\"><g fill=\"#2b4a80\"><ellipse cx=\"11\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 11 11)\"/><ellipse cx=\"29\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 29 11)\"/><ellipse cx=\"11\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 11 29)\"/><ellipse cx=\"29\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 29 29)\"/><circle cx=\"20\" cy=\"20\" r=\"2.2\"/></g><g fill=\"#d6e1ee\"><circle cx=\"11\" cy=\"11\" r=\"1.6\"/><circle cx=\"29\" cy=\"11\" r=\"1.6\"/><circle cx=\"11\" cy=\"29\" r=\"1.6\"/><circle cx=\"29\" cy=\"29\" r=\"1.6\"/></g></svg><svg style=\"transform:rotate(-1.77deg) translateY(1px);opacity:0.979;animation-delay:140ms\" viewBox=\"0 0 40 40\"><g fill=\"#2b4a80\"><ellipse cx=\"11\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 11 11)\"/><ellipse cx=\"29\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 29 11)\"/><ellipse cx=\"11\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 11 29)\"/><ellipse cx=\"29\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 29 29)\"/><circle cx=\"20\" cy=\"20\" r=\"2.2\"/></g><g fill=\"#d6e1ee\"><circle cx=\"11\" cy=\"11\" r=\"1.6\"/><circle cx=\"29\" cy=\"11\" r=\"1.6\"/><circle cx=\"11\" cy=\"29\" r=\"1.6\"/><circle cx=\"29\" cy=\"29\" r=\"1.6\"/></g></svg><svg style=\"transform:rotate(0.23deg) translateY(0px);opacity:0.944;animation-delay:112ms\" viewBox=\"0 0 40 40\"><g fill=\"#2b4a80\"><ellipse cx=\"11\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 11 11)\"/><ellipse cx=\"29\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 29 11)\"/><ellipse cx=\"11\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 11 29)\"/><ellipse cx=\"29\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 29 29)\"/><circle cx=\"20\" cy=\"20\" r=\"2.2\"/></g><g fill=\"#d6e1ee\"><circle cx=\"11\" cy=\"11\" r=\"1.6\"/><circle cx=\"29\" cy=\"11\" r=\"1.6\"/><circle cx=\"11\" cy=\"29\" r=\"1.6\"/><circle cx=\"29\" cy=\"29\" r=\"1.6\"/></g></svg><svg style=\"transform:rotate(-0.51deg) translateY(0px);opacity:0.953;animation-delay:84ms\" viewBox=\"0 0 40 40\"><g fill=\"#2b4a80\"><ellipse cx=\"11\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 11 11)\"/><ellipse cx=\"29\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 29 11)\"/><ellipse cx=\"11\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 11 29)\"/><ellipse cx=\"29\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 29 29)\"/><circle cx=\"20\" cy=\"20\" r=\"2.2\"/></g><g fill=\"#d6e1ee\"><circle cx=\"11\" cy=\"11\" r=\"1.6\"/><circle cx=\"29\" cy=\"11\" r=\"1.6\"/><circle cx=\"11\" cy=\"29\" r=\"1.6\"/><circle cx=\"29\" cy=\"29\" r=\"1.6\"/></g></svg><svg style=\"transform:rotate(-0.19deg) translateY(0px);opacity:0.910;animation-delay:56ms\" viewBox=\"0 0 40 40\"><g fill=\"#2b4a80\"><ellipse cx=\"11\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 11 11)\"/><ellipse cx=\"29\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 29 11)\"/><ellipse cx=\"11\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 11 29)\"/><ellipse cx=\"29\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 29 29)\"/><circle cx=\"20\" cy=\"20\" r=\"2.2\"/></g><g fill=\"#d6e1ee\"><circle cx=\"11\" cy=\"11\" r=\"1.6\"/><circle cx=\"29\" cy=\"11\" r=\"1.6\"/><circle cx=\"11\" cy=\"29\" r=\"1.6\"/><circle cx=\"29\" cy=\"29\" r=\"1.6\"/></g></svg><svg style=\"transform:rotate(0.50deg) translateY(1px);opacity:0.990;animation-delay:28ms\" viewBox=\"0 0 40 40\"><g fill=\"#2b4a80\"><ellipse cx=\"11\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 11 11)\"/><ellipse cx=\"29\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 29 11)\"/><ellipse cx=\"11\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 11 29)\"/><ellipse cx=\"29\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 29 29)\"/><circle cx=\"20\" cy=\"20\" r=\"2.2\"/></g><g fill=\"#d6e1ee\"><circle cx=\"11\" cy=\"11\" r=\"1.6\"/><circle cx=\"29\" cy=\"11\" r=\"1.6\"/><circle cx=\"11\" cy=\"29\" r=\"1.6\"/><circle cx=\"29\" cy=\"29\" r=\"1.6\"/></g></svg><svg style=\"transform:rotate(-1.34deg) translateY(0px);opacity:0.930;animation-delay:0ms\" viewBox=\"0 0 40 40\"><g fill=\"#2b4a80\"><ellipse cx=\"11\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 11 11)\"/><ellipse cx=\"29\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 29 11)\"/><ellipse cx=\"11\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 11 29)\"/><ellipse cx=\"29\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 29 29)\"/><circle cx=\"20\" cy=\"20\" r=\"2.2\"/></g><g fill=\"#d6e1ee\"><circle cx=\"11\" cy=\"11\" r=\"1.6\"/><circle cx=\"29\" cy=\"11\" r=\"1.6\"/><circle cx=\"11\" cy=\"29\" r=\"1.6\"/><circle cx=\"29\" cy=\"29\" r=\"1.6\"/></g></svg><svg style=\"transform:rotate(-0.68deg) translateY(0px);opacity:0.934;animation-delay:28ms\" viewBox=\"0 0 40 40\"><g fill=\"#2b4a80\"><ellipse cx=\"11\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 11 11)\"/><ellipse cx=\"29\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 29 11)\"/><ellipse cx=\"11\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 11 29)\"/><ellipse cx=\"29\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 29 29)\"/><circle cx=\"20\" cy=\"20\" r=\"2.2\"/></g><g fill=\"#d6e1ee\"><circle cx=\"11\" cy=\"11\" r=\"1.6\"/><circle cx=\"29\" cy=\"11\" r=\"1.6\"/><circle cx=\"11\" cy=\"29\" r=\"1.6\"/><circle cx=\"29\" cy=\"29\" r=\"1.6\"/></g></svg><svg style=\"transform:rotate(0.16deg) translateY(-1px);opacity:0.871;animation-delay:56ms\" viewBox=\"0 0 40 40\"><g fill=\"#2b4a80\"><ellipse cx=\"11\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 11 11)\"/><ellipse cx=\"29\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 29 11)\"/><ellipse cx=\"11\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 11 29)\"/><ellipse cx=\"29\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 29 29)\"/><circle cx=\"20\" cy=\"20\" r=\"2.2\"/></g><g fill=\"#d6e1ee\"><circle cx=\"11\" cy=\"11\" r=\"1.6\"/><circle cx=\"29\" cy=\"11\" r=\"1.6\"/><circle cx=\"11\" cy=\"29\" r=\"1.6\"/><circle cx=\"29\" cy=\"29\" r=\"1.6\"/></g></svg><svg style=\"transform:rotate(1.89deg) translateY(0px);opacity:0.899;animation-delay:84ms\" viewBox=\"0 0 40 40\"><g fill=\"#2b4a80\"><ellipse cx=\"11\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 11 11)\"/><ellipse cx=\"29\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 29 11)\"/><ellipse cx=\"11\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 11 29)\"/><ellipse cx=\"29\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 29 29)\"/><circle cx=\"20\" cy=\"20\" r=\"2.2\"/></g><g fill=\"#d6e1ee\"><circle cx=\"11\" cy=\"11\" r=\"1.6\"/><circle cx=\"29\" cy=\"11\" r=\"1.6\"/><circle cx=\"11\" cy=\"29\" r=\"1.6\"/><circle cx=\"29\" cy=\"29\" r=\"1.6\"/></g></svg><svg style=\"transform:rotate(1.28deg) translateY(1px);opacity:0.967;animation-delay:112ms\" viewBox=\"0 0 40 40\"><g fill=\"#2b4a80\"><ellipse cx=\"11\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 11 11)\"/><ellipse cx=\"29\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 29 11)\"/><ellipse cx=\"11\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 11 29)\"/><ellipse cx=\"29\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 29 29)\"/><circle cx=\"20\" cy=\"20\" r=\"2.2\"/></g><g fill=\"#d6e1ee\"><circle cx=\"11\" cy=\"11\" r=\"1.6\"/><circle cx=\"29\" cy=\"11\" r=\"1.6\"/><circle cx=\"11\" cy=\"29\" r=\"1.6\"/><circle cx=\"29\" cy=\"29\" r=\"1.6\"/></g></svg><svg style=\"transform:rotate(-1.28deg) translateY(0px);opacity:0.932;animation-delay:140ms\" viewBox=\"0 0 40 40\"><g fill=\"#2b4a80\"><ellipse cx=\"11\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 11 11)\"/><ellipse cx=\"29\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 29 11)\"/><ellipse cx=\"11\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 11 29)\"/><ellipse cx=\"29\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 29 29)\"/><circle cx=\"20\" cy=\"20\" r=\"2.2\"/></g><g fill=\"#d6e1ee\"><circle cx=\"11\" cy=\"11\" r=\"1.6\"/><circle cx=\"29\" cy=\"11\" r=\"1.6\"/><circle cx=\"11\" cy=\"29\" r=\"1.6\"/><circle cx=\"29\" cy=\"29\" r=\"1.6\"/></g></svg><svg style=\"transform:rotate(1.98deg) translateY(0px);opacity:0.896;animation-delay:168ms\" viewBox=\"0 0 40 40\"><g fill=\"#2b4a80\"><ellipse cx=\"11\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 11 11)\"/><ellipse cx=\"29\" cy=\"11\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 29 11)\"/><ellipse cx=\"11\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(45 11 29)\"/><ellipse cx=\"29\" cy=\"29\" rx=\"5.6\" ry=\"9.6\" transform=\"rotate(-45 29 29)\"/><circle cx=\"20\" cy=\"20\" r=\"2.2\"/></g><g fill=\"#d6e1ee\"><circle cx=\"11\" cy=\"11\" r=\"1.6\"/><circle cx=\"29\" cy=\"11\" r=\"1.6\"/><circle cx=\"11\" cy=\"29\" r=\"1.6\"/><circle cx=\"29\" cy=\"29\" r=\"1.6\"/></g></svg></div>",
+      "css": ".ds-pinggiran{display:flex;justify-content:center;gap:10px;overflow:hidden;padding:14px 0;background:var(--nila-pale,#d6e1ee)} .ds-pinggiran svg{flex:none;width:30px;height:30px;animation:ds-press 420ms cubic-bezier(0.16,1,0.3,1) both} @keyframes ds-press{from{opacity:0;scale:1.35;filter:blur(2px)}} @media (prefers-reduced-motion:reduce){.ds-pinggiran svg{animation:none}}"
+    },
+    {
+      "name": "Cecek Index",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The hero project index: links led by 6px isen cecek dots.",
+      "html": "<div class=\"ds-bath-nila\"><ol class=\"ds-index\"><li><a href=\"#\"><i></i>Sholatku</a></li><li><a href=\"#\"><i></i>PDF Insight AI</a></li><li><a href=\"#\"><i></i>IDX Monitor</a></li></ol></div>",
+      "css": ".ds-bath-nila{background:var(--nila,#1f3a6b);padding:24px} .ds-index{display:flex;flex-wrap:wrap;gap:0 36px;margin:0;padding:0;list-style:none;font-family:\"Hanken Grotesk\",system-ui,sans-serif;font-size:15px} .ds-index a{display:flex;align-items:center;gap:10px;padding:6px 0;color:rgba(244,241,234,0.8);text-decoration:none;transition:color 150ms} .ds-index a:hover{color:var(--wax,#f4f1ea)} .ds-index i{width:6px;height:6px;flex:none;border-radius:9999px;background:var(--isen,#e0b25a);transition:transform 200ms} .ds-index a:hover i{transform:scale(1.5)} .ds-index a:focus-visible{outline:2px solid var(--isen,#e0b25a);outline-offset:3px;border-radius:2px}"
+    },
+    {
+      "name": "Path Timeline",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "One unbroken 2px nila line on the pale bath with hollow nodes; across the top in four columns on desktop, down the left on mobile.",
+      "html": "<div class=\"ds-bath-pale\"><ol class=\"ds-path\"><li><p class=\"yr\">2020–2023</p><h4>Software Engineering (RPL)</h4><p class=\"pl\">SMK Muhammadiyah 1 Yogyakarta</p></li><li><p class=\"yr\">2023–now</p><h4>Bachelor of Informatics</h4><p class=\"pl\">Universitas Amikom Yogyakarta</p></li></ol></div>",
+      "css": ".ds-bath-pale{background:var(--nila-pale,#d6e1ee);color:var(--ink,#182c52);padding:32px 24px;font-family:\"Hanken Grotesk\",system-ui,sans-serif} .ds-path{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;margin:0;padding:40px 0 0;list-style:none;border-top:2px solid var(--nila,#1f3a6b)} .ds-path li{position:relative} .ds-path li::before{content:\"\";position:absolute;top:-47px;left:0;width:12px;height:12px;box-sizing:border-box;border-radius:9999px;border:2px solid var(--nila,#1f3a6b);background:var(--nila-pale,#d6e1ee)} .ds-path .yr{margin:0;font-family:\"Bricolage Grotesque\",system-ui,sans-serif;font-size:20px;font-weight:700;color:var(--nila,#1f3a6b);font-variant-numeric:tabular-nums} .ds-path h4{margin:8px 0 0;font-size:18px;font-weight:600;line-height:1.375} .ds-path .pl{margin:4px 0 0;font-size:15px;font-weight:500;color:var(--ink-soft,#3d5277)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Celup Batik Cap",
+    "overview": "The page is one length of batik cap cloth taken through its dye baths. Every section is a full-bleed bath of flat dye, and the order of the baths is the order of the story: deep nila for the name, unwaxed mori cloth where the work is read, a pale first dip for the path, a second nila dip for skills, and a final soga bath for contact. Type sits on the dyed grounds the way wax resist sits on cloth: wax-white on dark baths, nila ink on pale ones.\n\nThe only ornament is the cap stamp itself. A row of kawung stamps, the pinggiran, is pressed along every seam where one bath meets the next, each stamp at a slightly different angle and ink load so the band reads as hand-pressed. Everywhere else the cloth is quiet: generous empty bands, hairline rules, a strict margin column, one unbroken timeline. Markers inside a bath are small isen cecek dots. The header logo carries a single kawung as the maker's cap mark, the one place the stamp appears outside a pinggiran.\n\nCalm and colourful at once: colour comes from the dye fields themselves, not from accents sprinkled on a neutral page. The previous cream, pastel and serif-italic direction was rejected and is not this world.",
+    "keyCharacteristics": [
+      "Full-bleed flat dye baths, one per section, in a fixed nila → mori → pale nila → nila-mid → soga sequence.",
+      "Pinggiran kawung band at every bath seam; the stamps press in one by one on first scroll.",
+      "Wax-white resist type on dark baths, nila ink on pale ones.",
+      "Bricolage Grotesque display set tight and heavy; Hanken Grotesk body.",
+      "Near-square 3px corners, hairline rules, no cards, no gradients, no glass.",
+      "Isen cecek dots as markers; the kawung logo is the single exception."
+    ],
+    "rules": [
+      {
+        "name": "The Dye Bath Rule",
+        "body": "A section's background is one flat dye from the palette, edge to edge. Colour lives in the ground, not in accents laid over a neutral page.",
+        "section": "colors"
+      },
+      {
+        "name": "The Resist Rule",
+        "body": "Type on a dark bath is wax; type on a pale bath is ink. Gold is for emphasis only: the primary action, the one line a bath must land (hero title, contact email), and cecek dots. It never fills a ground or sets running text.",
+        "section": "colors"
+      },
+      {
+        "name": "The Darkening Order Rule",
+        "body": "Baths run nila, mori, pale nila, nila-mid, soga. New sections slot into this sequence; they do not introduce a new dye.",
+        "section": "colors"
+      },
+      {
+        "name": "The Carved Block Rule",
+        "body": "Display sizes are always bold and negatively tracked (-0.02em to -0.035em) with `text-wrap: balance`. Never light, never italic.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Eyebrow Rule",
+        "body": "Sections open on their headline. No small uppercase kicker above titles.",
+        "section": "typography"
+      },
+      {
+        "name": "The Active Emptiness Rule",
+        "body": "Leave the bath empty around content rather than filling it. One idea per band; no decorative fills in the gaps.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Cloth Rule",
+        "body": "No gradients, no glass, no blur surfaces, no shadows on text or controls. The screenshot drop is the only shadow in the system.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** give every new section a whole flat bath from the palette and place it in the darkening order.",
+      "**Do** put a pinggiran band at every seam between two baths, coloured from the incoming bath's family.",
+      "**Do** use wax type on nila, nila-mid and soga; ink type on mori and pale nila.",
+      "**Do** use isen cecek dots (6px, round) for markers and index bullets.",
+      "**Do** keep corners at 3px and rules at 1px hairlines.",
+      "**Do** honour `prefers-reduced-motion`: stamps appear pressed, smooth scroll is off."
+    ],
+    "donts": [
+      "**Don't** use the kawung stamp anywhere except the pinggiran band and the header logo.",
+      "**Don't** put content in cards, add gradients, glass, or blur surfaces, or add shadows beyond the screenshot drop.",
+      "**Don't** introduce a neutral cream ground, pastels, or serif italics; that direction was rejected.",
+      "**Don't** add uppercase kickers or eyebrows above headlines.",
+      "**Don't** set running text or fill a bath in isen gold."
+    ]
+  }
+}
