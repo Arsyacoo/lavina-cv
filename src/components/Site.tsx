@@ -120,24 +120,13 @@ export default function Site() {
                         </div>
 
                         <div className="mt-12 border-t border-ink/15">
-                            {projects.map((p) => (
-                                <article key={p.id} id={p.id} className="grid border-b border-ink/15 py-10 md:grid-cols-[170px_minmax(0,1fr)] md:gap-10 md:py-14">
-                                    <dl className="hidden text-[15px] md:flex md:flex-col md:gap-3">
-                                        <div>
-                                            <dt className="sr-only">{t.role}</dt>
-                                            <dd className="font-semibold text-ink">{p.role[lang]}</dd>
-                                        </div>
-                                        <div>
-                                            <dt className="sr-only">Year</dt>
-                                            <dd className="tnum text-ink-soft">{p.year}</dd>
-                                        </div>
-                                    </dl>
-
-                                    <div className={`grid gap-8 ${p.image ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-12" : ""}`}>
-                                        <div className="max-w-[40rem]">
+                            {projects.map((p, i) => (
+                                <article key={p.id} id={p.id} className="border-b border-ink/15 py-12 md:py-16">
+                                    <div className={`grid items-center gap-8 lg:gap-14 ${i % 2 ? "lg:grid-cols-[minmax(0,1.22fr)_minmax(0,1fr)]" : "lg:grid-cols-[minmax(0,1fr)_minmax(0,1.22fr)]"}`}>
+                                        <div className={`max-w-[38rem] ${i % 2 ? "lg:order-2" : ""}`}>
                                             <h3 className="font-display text-3xl font-bold leading-tight tracking-[-0.02em] md:text-4xl">{p.name}</h3>
                                             <p className="mt-1.5 text-lg text-ink-soft">{p.tagline[lang]}</p>
-                                            <p className="tnum mt-2 text-[15px] text-ink-soft md:hidden"><span className="font-semibold text-ink">{p.role[lang]}</span> · {p.year}</p>
+                                            <p className="tnum mt-2 text-[15px] text-ink-soft"><span className="font-semibold text-ink">{p.role[lang]}</span> · {p.year}</p>
                                             <ul className="mt-5 space-y-3 text-[16.5px] leading-relaxed text-ink/90">
                                                 {p.points[lang].map((point) => (
                                                     <li key={point} className="flex gap-3">
@@ -162,9 +151,9 @@ export default function Site() {
                                         </div>
 
                                         {p.image && (
-                                            <a href={p.live ?? p.repo} target="_blank" rel="noopener noreferrer" className="group block self-start bg-nila-pale p-3 transition-colors hover:bg-nila-pale-hover md:p-4" tabIndex={-1} aria-hidden="true">
+                                            <a href={p.live ?? p.repo} target="_blank" rel="noopener noreferrer" className={`group block bg-nila-pale p-3 transition-colors hover:bg-nila-pale-hover md:p-4 ${i % 2 ? "lg:order-1" : ""}`} tabIndex={-1} aria-hidden="true">
                                                 <div className="relative aspect-[16/10] overflow-hidden bg-white shadow-[0_6px_18px_-6px_rgba(23,45,85,0.35)]">
-                                                    <Image src={p.image} alt={t.previewAlt(p.name)} fill quality={92} sizes="(max-width: 1024px) 100vw, 520px" className="object-contain" />
+                                                    <Image src={p.image} alt={t.previewAlt(p.name)} fill quality={92} sizes="(max-width: 1024px) 100vw, 620px" className="object-contain" />
                                                 </div>
                                             </a>
                                         )}
