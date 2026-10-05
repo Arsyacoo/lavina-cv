@@ -38,7 +38,7 @@ An Informatics undergraduate who turns academic ideas into functional, documente
 
 - Project screenshots: `public/sholatku-light.webp` (light-mode screenshot supplied by the user), `public/ai-healthcare.webp`, `public/pdf-insight.webp`, `public/fraud-detection.webp`.
 - `public/idx-monitor.webp` (captured from the locally running app) and `public/rental-iqra.webp` (supplied by the user, low resolution 624x326). Every project now has a screenshot.
-- Portrait: `public/profile.webp` (casual selfie; user wants a more formal photo eventually).
+- Portrait: `public/portrait.webp` (formal headshot supplied by the user, shown in full colour). Raster provenance notes live in `.impeccable/provenance/`.
 - No testimonials, clients, metrics, or awards exist. Never fabricate them.
 
 ## Product Principles
