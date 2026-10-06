@@ -36,6 +36,7 @@ export default function Site() {
 
     const t = copy[lang];
     const mail = emailHref(lang);
+    const navLinks = [["#work", t.nav.work], ["#path", t.nav.path], ["#skills", t.nav.skills], ["#contact", t.nav.contact]];
 
     return (
         <>
@@ -46,10 +47,9 @@ export default function Site() {
                         Lavina Arsya
                     </a>
                     <div className="hidden items-center gap-7 text-[15px] text-wax/80 md:flex">
-                        <a href="#work" className="transition-colors hover:text-wax">{t.nav.work}</a>
-                        <a href="#path" className="transition-colors hover:text-wax">{t.nav.path}</a>
-                        <a href="#skills" className="transition-colors hover:text-wax">{t.nav.skills}</a>
-                        <a href="#contact" className="transition-colors hover:text-wax">{t.nav.contact}</a>
+                        {navLinks.map(([href, label]) => (
+                            <a key={href} href={href} className="transition-colors hover:text-wax">{label}</a>
+                        ))}
                     </div>
                     <div className="flex items-center gap-2">
                         <button
@@ -66,6 +66,13 @@ export default function Site() {
                         </a>
                     </div>
                 </nav>
+                <div className="border-t border-wax/10 md:hidden">
+                    <div className="wrap flex justify-between text-[14px] text-wax/80">
+                        {navLinks.map(([href, label]) => (
+                            <a key={href} href={href} className="py-2.5 transition-colors hover:text-wax">{label}</a>
+                        ))}
+                    </div>
+                </div>
             </header>
 
             <main id="top">
