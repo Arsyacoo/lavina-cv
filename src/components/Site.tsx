@@ -1,41 +1,13 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ArrowUpRight, Download, Mail } from "lucide-react";
 import Kawung from "./Kawung";
 import Pinggiran from "./Pinggiran";
 import { contact, copy, emailHref, path, projects, skills, type Lang } from "@/content";
 
-const STORAGE_KEY = "lavina-lang";
-
-export default function Site() {
-    const [lang, setLang] = useState<Lang>("en");
-
-    useEffect(() => {
-        let saved: string | null = null;
-        try {
-            saved = window.localStorage.getItem(STORAGE_KEY);
-        } catch {}
-        const initial: Lang = saved === "id" || saved === "en" ? saved : navigator.language.toLowerCase().startsWith("id") ? "id" : "en";
-        // eslint-disable-next-line react-hooks/set-state-in-effect -- language is only knowable on the client
-        setLang(initial);
-    }, []);
-
-    useEffect(() => {
-        document.documentElement.lang = lang;
-    }, [lang]);
-
-    const toggleLang = () => {
-        const next: Lang = lang === "en" ? "id" : "en";
-        setLang(next);
-        try {
-            window.localStorage.setItem(STORAGE_KEY, next);
-        } catch {}
-    };
-
+export default function Site({ lang }: { lang: Lang }) {
     const t = copy[lang];
     const mail = emailHref(lang);
+    const navLinks = [["#work", t.nav.work], ["#path", t.nav.path], ["#skills", t.nav.skills], ["#contact", t.nav.contact]];
 
     return (
         <>
@@ -46,26 +18,32 @@ export default function Site() {
                         Lavina Arsya
                     </a>
                     <div className="hidden items-center gap-7 text-[15px] text-wax/80 md:flex">
-                        <a href="#work" className="transition-colors hover:text-wax">{t.nav.work}</a>
-                        <a href="#path" className="transition-colors hover:text-wax">{t.nav.path}</a>
-                        <a href="#skills" className="transition-colors hover:text-wax">{t.nav.skills}</a>
-                        <a href="#contact" className="transition-colors hover:text-wax">{t.nav.contact}</a>
+                        {navLinks.map(([href, label]) => (
+                            <a key={href} href={href} className="transition-colors hover:text-wax">{label}</a>
+                        ))}
                     </div>
                     <div className="flex items-center gap-2">
-                        <button
-                            type="button"
-                            onClick={toggleLang}
+<a
+                            href={lang === "en" ? "/id" : "/"}
+                            hrefLang={lang === "en" ? "id" : "en"}
                             aria-label={t.nav.switchTo}
                             className="flex h-9 items-center rounded-[3px] border border-wax/25 p-0.5 text-[13px] font-semibold"
                         >
                             <span className={`rounded-[3px] px-2.5 py-1 transition-colors ${lang === "en" ? "bg-wax text-nila-deep" : "text-wax/70"}`}>EN</span>
                             <span className={`rounded-[3px] px-2.5 py-1 transition-colors ${lang === "id" ? "bg-wax text-nila-deep" : "text-wax/70"}`}>ID</span>
-                        </button>
+                        </a>
                         <a href={contact.resume} download aria-label={t.resumeCta} className="inline-flex h-9 items-center gap-1.5 rounded-[3px] bg-isen px-2.5 text-[14px] font-semibold text-nila-deep transition-colors hover:bg-wax sm:px-4">
                             <Download size={15} strokeWidth={2.25} /> <span className="hidden sm:inline">{t.nav.resume}</span>
                         </a>
                     </div>
                 </nav>
+                <div className="border-t border-wax/10 md:hidden">
+                    <div className="wrap flex justify-between text-[14px] text-wax/80">
+                        {navLinks.map(([href, label]) => (
+                            <a key={href} href={href} className="py-2.5 transition-colors hover:text-wax">{label}</a>
+                        ))}
+                    </div>
+                </div>
             </header>
 
             <main id="top">
