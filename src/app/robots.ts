@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://arsyalavina.dev/sitemap.xml",
+    sitemap: "https://www.arsyalavina.web.id/sitemap.xml",
   };
 }
 
