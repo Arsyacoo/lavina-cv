@@ -21,7 +21,7 @@ An Informatics undergraduate who turns academic ideas into functional, documente
 ## Operating Context
 
 - Live at https://www.arsyalavina.web.id, deployed from the `master` branch.
-- Bilingual: English and Bahasa Indonesia with a visitor toggle. Copy comes from the two CVs (English ATS resume and Indonesian ATS CV).
+- Bilingual: English at `/` and Bahasa Indonesia at `/id`, each server-rendered with its own lang, canonical and hreflang; the EN/ID toggle links between them. Copy comes from the two CVs (English ATS resume and Indonesian ATS CV).
 - Resume PDF served from `public/Lavina-Arsya-Resume.pdf`.
 
 ## Capabilities and Constraints
