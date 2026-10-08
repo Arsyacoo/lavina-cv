@@ -1,140 +1,190 @@
 import Image from "next/image";
-import { ArrowUpRight, Download, Mail } from "lucide-react";
-import Kawung from "./Kawung";
-import Pinggiran from "./Pinggiran";
-import { contact, copy, emailHref, path, projects, skills, type Lang } from "@/content";
+import { ArrowUpRight, Download, Github, Linkedin, Mail, MessageCircle } from "lucide-react";
+import { contact, copy, emailHref, projects, skills, type Lang } from "@/content";
+
+function SignalMark({ className = "" }: { className?: string }) {
+    return (
+        <svg viewBox="0 0 40 40" aria-hidden="true" className={className}>
+            <path d="M5 11.5h8.5v8M35 28.5h-8.5v-8M20 5v8.5M20 35v-8.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+            <circle cx="20" cy="20" r="5.5" fill="currentColor" />
+            <circle cx="20" cy="20" r="2" fill="var(--signal-surface)" />
+        </svg>
+    );
+}
+
+function SignalPanel({ lang }: { lang: Lang }) {
+    const t = copy[lang];
+
+    return (
+        <div className="signal-panel" aria-label={t.heroPanelTitle}>
+            <div className="signal-panel-top">
+                <div className="signal-panel-id">
+                    <SignalMark className="signal-panel-mark" />
+                    <span>AR / AI-01</span>
+                </div>
+                <span className="signal-panel-status"><i /> {lang === "id" ? "alur demo" : "demo flow"}</span>
+            </div>
+            <div className="signal-panel-body">
+                <p className="panel-label">{t.heroPanelLabel}</p>
+                <div className="panel-heading-row">
+                    <h2>{t.heroPanelTitle}</h2>
+                    <span className="panel-meta">{t.heroPanelMeta}</span>
+                </div>
+                <div className="panel-question">
+                    <span className="panel-prompt">{lang === "id" ? "PERTANYAAN" : "QUESTION"}</span>
+                    <p>{t.heroPanelQuestion}</p>
+                </div>
+                <div className="panel-answer">
+                    <span className="panel-prompt">{lang === "id" ? "JAWABAN TERARAH SUMBER" : "SOURCE-GROUNDED ANSWER"}</span>
+                    <p>{t.heroPanelAnswer}</p>
+                    <span className="panel-cursor" aria-hidden="true" />
+                </div>
+                <div className="panel-signal" aria-hidden="true">
+                    <span className="panel-signal-line panel-signal-line-one" />
+                    <span className="panel-signal-line panel-signal-line-two" />
+                    <span className="panel-signal-node panel-signal-node-one" />
+                    <span className="panel-signal-node panel-signal-node-two" />
+                    <span className="panel-signal-node panel-signal-node-three" />
+                </div>
+            </div>
+            <div className="signal-panel-bottom">
+                {t.heroPanelFooter.map((item) => <span key={item}>{item}</span>)}
+            </div>
+        </div>
+    );
+}
 
 export default function Site({ lang }: { lang: Lang }) {
     const t = copy[lang];
     const mail = emailHref(lang);
-    const navLinks = [["#work", t.nav.work], ["#path", t.nav.path], ["#skills", t.nav.skills], ["#contact", t.nav.contact]];
+    const featuredProject = projects[1];
+    const supportingProjects = projects.filter((project) => project.id !== featuredProject.id);
+    const navLinks = [
+        ["#work", t.nav.work],
+        ["#approach", t.nav.approach],
+        ["#stack", t.nav.stack],
+        ["#contact", t.nav.contact],
+    ];
 
     return (
         <>
-            <header className="sticky top-0 z-40 bg-nila-deep text-wax">
-                <nav className="wrap flex h-16 items-center justify-between gap-4" aria-label={lang === "id" ? "Navigasi utama" : "Primary navigation"}>
-                    <a href="#top" className="flex items-center gap-2.5 font-display text-lg font-semibold tracking-tight">
-                        <Kawung className="h-6 w-6 text-isen" holeClassName="text-nila-deep" />
-                        Lavina Arsya
+            <header className="site-header">
+                <nav className="wrap site-nav" aria-label={lang === "id" ? "Navigasi utama" : "Primary navigation"}>
+                    <a href="#top" className="brand" aria-label="Arsyacoo home">
+                        <SignalMark className="brand-mark" />
+                        <span>Arsyacoo</span>
                     </a>
-                    <div className="hidden items-center gap-7 text-[15px] text-wax/80 md:flex">
-                        {navLinks.map(([href, label]) => (
-                            <a key={href} href={href} className="transition-colors hover:text-wax">{label}</a>
-                        ))}
+                    <div className="nav-links">
+                        {navLinks.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
                     </div>
-                    <div className="flex items-center gap-2">
-<a
+                    <div className="nav-actions">
+                        <a
                             href={lang === "en" ? "/id" : "/"}
                             hrefLang={lang === "en" ? "id" : "en"}
                             aria-label={t.nav.switchTo}
-                            className="flex h-9 items-center rounded-[3px] border border-wax/25 p-0.5 text-[13px] font-semibold"
+                            className="lang-toggle"
                         >
-                            <span className={`rounded-[3px] px-2.5 py-1 transition-colors ${lang === "en" ? "bg-wax text-nila-deep" : "text-wax/70"}`}>EN</span>
-                            <span className={`rounded-[3px] px-2.5 py-1 transition-colors ${lang === "id" ? "bg-wax text-nila-deep" : "text-wax/70"}`}>ID</span>
+                            <span className={lang === "en" ? "is-active" : ""}>EN</span>
+                            <span className={lang === "id" ? "is-active" : ""}>ID</span>
                         </a>
-                        <a href={contact.resume} download aria-label={t.resumeCta} className="inline-flex h-9 items-center gap-1.5 rounded-[3px] bg-isen px-2.5 text-[14px] font-semibold text-nila-deep transition-colors hover:bg-wax sm:px-4">
-                            <Download size={15} strokeWidth={2.25} /> <span className="hidden sm:inline">{t.nav.resume}</span>
+                        <a href={contact.resume} download aria-label={t.resumeCta} className="nav-profile">
+                            <Download size={15} strokeWidth={2.2} />
+                            <span>{t.nav.resume}</span>
                         </a>
                     </div>
                 </nav>
-                <div className="border-t border-wax/10 md:hidden">
-                    <div className="wrap flex justify-between text-[14px] text-wax/80">
-                        {navLinks.map(([href, label]) => (
-                            <a key={href} href={href} className="py-2.5 transition-colors hover:text-wax">{label}</a>
-                        ))}
-                    </div>
-                </div>
             </header>
 
             <main id="top">
-                {/* Bath 1: nila */}
-                <section className="bg-nila text-wax">
-                    <div className="wrap grid gap-10 pb-10 pt-14 md:grid-cols-[minmax(0,1fr)_minmax(220px,300px)] md:items-start md:gap-16 lg:gap-24 md:pb-14 md:pt-20">
-                        <div className="flex flex-col justify-center">
-                            <h1 className="font-display text-[clamp(3rem,8.5vw,6rem)] font-bold leading-[0.92] tracking-[-0.035em]">
-                                Lavina Arsya<br />Aryanto
-                            </h1>
-                            <p className="mt-6 font-display text-xl font-medium text-isen md:text-2xl">{t.title}</p>
-                            <p className="mt-4 max-w-[34rem] text-lg leading-relaxed text-wax/80">{t.summary}</p>
-                            <div className="mt-8 flex flex-wrap items-center gap-3">
-                                <a href={mail} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-[3px] bg-isen px-6 sm:w-auto font-semibold text-nila-deep transition-colors hover:bg-wax">
-                                    <Mail size={18} strokeWidth={2.25} /> {t.emailCta}
-                                </a>
-                                <a href={contact.resume} download className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-[3px] border border-wax/35 px-6 sm:w-auto font-semibold transition-colors hover:border-wax hover:bg-wax/10">
-                                    <Download size={18} strokeWidth={2.25} /> {t.resumeCta}
-                                </a>
+                <section className="hero-section">
+                    <div className="wrap hero-grid">
+                        <div className="hero-copy">
+                            <h1>{t.heroTitle}</h1>
+                            <p className="hero-brandline"><span className="signal-dot" /> Arsyacoo / Applied AI studio</p>
+                            <p className="hero-summary">{t.heroSummary}</p>
+                            <div className="hero-actions">
+                                <a href="#work" className="button button-primary">{t.heroPrimary}<ArrowUpRight size={17} strokeWidth={2.4} /></a>
+                                <a href={mail} target="_blank" rel="noopener noreferrer" className="button button-quiet">{t.heroSecondary}</a>
                             </div>
-                            <p className="mt-6 text-[15px] text-wax/60">{t.place}</p>
+                            <p className="hero-location">{t.heroLocation}</p>
                         </div>
-                        <figure className="mx-auto w-full max-w-[260px] md:mt-3 md:max-w-none">
-                            <div className="relative aspect-[4/5] overflow-hidden rounded-[3px] ring-1 ring-wax/30 ring-offset-8 ring-offset-nila">
-                                <Image src="/portrait.webp" alt={t.portraitAlt} fill priority quality={92} sizes="(max-width: 768px) 260px, 300px" className="object-cover object-[50%_30%]" />
-                            </div>
-                        </figure>
+                        <SignalPanel lang={lang} />
                     </div>
-
-                    <div className="border-t border-wax/15">
-                        <ol className="wrap flex flex-col gap-x-9 py-5 text-[15px] sm:flex-row sm:flex-wrap" aria-label={t.indexLabel}>
-                            {projects.map((p) => (
-                                <li key={p.id}>
-                                    <a href={`#${p.id}`} className="group flex items-center gap-2.5 py-1.5 text-wax/80 transition-colors hover:text-wax">
-                                        <span aria-hidden="true" className="h-1.5 w-1.5 flex-none rounded-full bg-isen transition-transform duration-200 group-hover:scale-150" />
-                                        <span>{p.name}</span>
-                                    </a>
-                                </li>
-                            ))}
-                        </ol>
+                    <div className="hero-strip">
+                        <div className="wrap hero-strip-inner" aria-label={lang === "id" ? "Fokus Arsyacoo" : "Arsyacoo focus"}>
+                            {t.strip.map((item) => <span key={item}><i />{item}</span>)}
+                        </div>
                     </div>
                 </section>
 
-                <Pinggiran className="bg-mori" stampClassName="text-nila" holeClassName="text-mori" />
-
-                {/* Bath 0: unwaxed mori, where the work is read */}
-                <section id="work" className="bg-mori pb-20 pt-12 md:pb-28 md:pt-16">
+                <section id="approach" className="approach-section">
                     <div className="wrap">
-                        <div className="max-w-2xl">
-                            <h2 className="font-display text-5xl font-bold tracking-[-0.03em] md:text-6xl">{t.workTitle}</h2>
-                            <p className="mt-3 text-lg text-ink-soft">{t.workIntro}</p>
+                        <div className="section-heading section-heading-wide">
+                            <h2>{t.approachTitle}</h2>
+                            <p>{t.approachIntro}</p>
+                        </div>
+                        <div className="approach-grid">
+                            {t.approach.map((item) => (
+                                <article key={item.title} className="approach-item">
+                                    <h3>{item.title}</h3>
+                                    <p>{item.text}</p>
+                                </article>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                <section id="work" className="proof-section">
+                    <div className="wrap">
+                        <div className="section-heading">
+                            <h2>{t.proofTitle}</h2>
+                            <p>{t.proofIntro}</p>
                         </div>
 
-                        <div className="mt-12 border-t border-ink/15">
-                            {projects.map((p, i) => (
-                                <article key={p.id} id={p.id} className="border-b border-ink/15 py-12 md:py-16">
-                                    <div className={`grid items-center gap-8 lg:gap-14 ${i % 2 ? "lg:grid-cols-[minmax(0,1.22fr)_minmax(0,1fr)]" : "lg:grid-cols-[minmax(0,1fr)_minmax(0,1.22fr)]"}`}>
-                                        <div className={`max-w-[38rem] ${i % 2 ? "lg:order-2" : ""}`}>
-                                            <h3 className="font-display text-3xl font-bold leading-tight tracking-[-0.02em] md:text-4xl">{p.name}</h3>
-                                            <p className="mt-1.5 text-lg text-ink-soft">{p.tagline[lang]}</p>
-                                            <p className="tnum mt-2 text-[15px] text-ink-soft"><span className="font-semibold text-ink">{p.role[lang]}</span> · {p.year}</p>
-                                            <ul className="mt-5 space-y-3 text-[16.5px] leading-relaxed text-ink/90">
-                                                {p.points[lang].map((point) => (
-                                                    <li key={point} className="flex gap-3">
-                                                        <span aria-hidden="true" className="mt-[0.65em] h-1.5 w-1.5 flex-none rounded-full bg-soga" />
-                                                        {point}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                            <p className="mt-5 text-[15px] text-ink-soft">
-                                                <span className="font-semibold text-ink">{t.stack}:</span> {p.stack.join(" · ")}
-                                            </p>
-                                            <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
-                                                <a href={p.repo} target="_blank" rel="noopener noreferrer" className="link-line inline-flex items-center gap-1 font-semibold text-nila">
-                                                    {t.repo} <ArrowUpRight size={16} strokeWidth={2.25} />
-                                                </a>
-                                                {p.live && (
-                                                    <a href={p.live} target="_blank" rel="noopener noreferrer" className="link-line inline-flex items-center gap-1 font-semibold text-nila">
-                                                        {t.live} <ArrowUpRight size={16} strokeWidth={2.25} />
-                                                    </a>
-                                                )}
-                                            </div>
-                                        </div>
+                        <article className="featured-project">
+                            <a href={featuredProject.repo} target="_blank" rel="noopener noreferrer" className="featured-media" aria-label={`${t.repo}: ${featuredProject.name}`}>
+                                <Image src={featuredProject.image ?? ""} alt={t.previewAlt(featuredProject.name)} fill sizes="(max-width: 900px) 100vw, 58vw" quality={92} />
+                                <span className="media-caption">{featuredProject.name} <ArrowUpRight size={16} /></span>
+                            </a>
+                            <div className="featured-copy">
+                                <h3>{t.featuredTitle}</h3>
+                                <p className="project-type">{featuredProject.name} · {featuredProject.role[lang]} · {featuredProject.year}</p>
+                                <p className="featured-intro">{t.featuredIntro}</p>
+                                <ul className="proof-points">
+                                    {t.featuredPoints.map((point) => <li key={point}><span aria-hidden="true">+</span>{point}</li>)}
+                                </ul>
+                                <p className="project-stack"><strong>{t.stack}:</strong> {featuredProject.stack.join(" · ")}</p>
+                                <div className="project-links">
+                                    <a href={featuredProject.repo} target="_blank" rel="noopener noreferrer">{t.repo}<ArrowUpRight size={15} /></a>
+                                </div>
+                            </div>
+                        </article>
 
-                                        {p.image && (
-                                            <a href={p.live ?? p.repo} target="_blank" rel="noopener noreferrer" className={`group block bg-nila-pale p-3 transition-colors hover:bg-nila-pale-hover md:p-4 ${i % 2 ? "lg:order-1" : ""}`} tabIndex={-1} aria-hidden="true">
-                                                <div className="relative aspect-[16/10] overflow-hidden bg-white shadow-[0_6px_18px_-6px_rgba(23,45,85,0.35)]">
-                                                    <Image src={p.image} alt={t.previewAlt(p.name)} fill quality={92} sizes="(max-width: 1024px) 100vw, 620px" className="object-contain" />
-                                                </div>
-                                            </a>
-                                        )}
+                        <div className="project-list-heading">
+                            <h3>{t.projectListTitle}</h3>
+                            <p>{t.projectListIntro}</p>
+                        </div>
+                        <div className="project-list">
+                            {supportingProjects.map((project, index) => (
+                                <article key={project.id} id={project.id} className="project-row">
+                                    <span className="project-row-index">{String(index + 2).padStart(2, "0")}</span>
+                                    <div className="project-row-main">
+                                        <div className="project-row-title">
+                                            <h3>{project.name}</h3>
+                                            <span>{project.year}</span>
+                                        </div>
+                                        <p>{project.tagline[lang]}</p>
+                                    </div>
+                                    <p className="project-row-role">{project.role[lang]}</p>
+                                    <div className="project-row-stack">
+                                        {project.stack.slice(0, 4).map((item) => <span key={item}>{item}</span>)}
+                                    </div>
+                                    <div className="project-row-image">
+                                        <Image src={project.image ?? ""} alt={t.previewAlt(project.name)} fill sizes="180px" quality={86} />
+                                    </div>
+                                    <div className="project-row-links">
+                                        <a href={project.repo} target="_blank" rel="noopener noreferrer" aria-label={`${t.repo}: ${project.name}`}><Github size={15} />{t.repo}</a>
+                                        {project.live && <a href={project.live} target="_blank" rel="noopener noreferrer" aria-label={`${t.live}: ${project.name}`}><ArrowUpRight size={15} />{t.live}</a>}
                                     </div>
                                 </article>
                             ))}
@@ -142,74 +192,60 @@ export default function Site({ lang }: { lang: Lang }) {
                     </div>
                 </section>
 
-                <Pinggiran className="bg-nila-pale" stampClassName="text-nila-mid" holeClassName="text-nila-pale" />
-
-                {/* Bath 2: first dip, pale nila */}
-                <section id="path" className="bg-nila-pale pb-20 pt-12 md:pb-24 md:pt-16">
-                    <div className="wrap">
-                        <h2 className="font-display text-5xl font-bold tracking-[-0.03em] md:text-6xl">{t.pathTitle}</h2>
-
-                        <ol className="relative mt-12 grid gap-10 border-l-2 border-nila pl-8 md:grid-cols-4 md:gap-8 md:border-l-0 md:border-t-2 md:pl-0 md:pt-10">
-                            {path.map((step) => (
-                                <li key={step.years} className="relative">
-                                    <span aria-hidden="true" className="absolute -left-[39px] top-2 h-3 w-3 rounded-full border-2 border-nila bg-nila-pale md:-top-[47px] md:left-0" />
-                                    <p className="tnum font-display text-xl font-bold text-nila">{lang === "id" && step.yearsId ? step.yearsId : step.years}</p>
-                                    <h3 className="mt-2 text-lg font-semibold leading-snug">{step.title[lang]}</h3>
-                                    <p className="mt-1 text-[15px] font-medium text-ink-soft">{step.place}</p>
-                                    {step.note && <p className="mt-3 text-[15px] leading-relaxed text-ink/80">{step.note[lang]}</p>}
-                                </li>
-                            ))}
-                        </ol>
-                    </div>
-                </section>
-
-                <Pinggiran className="bg-nila-mid" stampClassName="text-nila-pale" holeClassName="text-nila-mid" />
-
-                {/* Bath 3: second dip, nila */}
-                <section id="skills" className="bg-nila-mid pb-20 pt-12 text-wax md:pb-24 md:pt-16">
-                    <div className="wrap grid gap-10 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.6fr)] md:gap-16">
-                        <div>
-                            <h2 className="font-display text-5xl font-bold tracking-[-0.03em] md:text-6xl">{t.skillsTitle}</h2>
-                            <p className="mt-3 text-lg text-wax/75">{t.skillsIntro}</p>
+                <section id="stack" className="stack-section">
+                    <div className="wrap stack-grid">
+                        <div className="section-heading stack-heading">
+                            <h2>{t.stackTitle}</h2>
+                            <p>{t.stackIntro}</p>
                         </div>
-                        <dl className="divide-y divide-wax/15 border-y border-wax/15">
-                            {skills.map((group) => (
-                                <div key={group.label.en} className="grid gap-1 py-4 sm:grid-cols-[180px_minmax(0,1fr)] sm:gap-6">
-                                    <dt className="font-semibold text-isen-light">{group.label[lang]}</dt>
-                                    <dd className="text-wax/90">{group.items}</dd>
+                        <dl className="skills-list">
+                            {skills.map((skill) => (
+                                <div key={skill.items} className="skill-row">
+                                    <dt>{skill.label[lang]}</dt>
+                                    <dd>{skill.items}</dd>
                                 </div>
                             ))}
                         </dl>
                     </div>
                 </section>
 
-                <Pinggiran className="bg-soga" stampClassName="text-isen" holeClassName="text-soga" />
+                <section className="founder-section">
+                    <div className="wrap founder-grid">
+                        <div className="founder-copy">
+                            <h2>{t.founderTitle}</h2>
+                            <p>{t.founderIntro}</p>
+                            <a href={contact.resume} download className="text-link">{t.founderProfile}<ArrowUpRight size={16} /></a>
+                        </div>
+                        <figure className="founder-portrait">
+                            <Image src="/portrait.webp" alt={t.portraitAlt} fill sizes="(max-width: 760px) 100vw, 320px" quality={90} />
+                        </figure>
+                    </div>
+                </section>
 
-                {/* Bath 4: soga, the final dye */}
-                <section id="contact" className="bg-soga pb-16 pt-14 text-wax md:pb-20 md:pt-20">
-                    <div className="wrap">
-                        <h2 className="max-w-4xl font-display text-[clamp(2.5rem,6vw,4.75rem)] font-bold leading-[1] tracking-[-0.035em]">{t.contactTitle}</h2>
-                        <p className="mt-5 max-w-xl text-lg text-wax/80">{t.contactIntro}</p>
-
-                        <a href={mail} target="_blank" rel="noopener noreferrer" className="group mt-10 inline-flex items-center gap-3 font-display text-[clamp(1.5rem,4.2vw,3rem)] font-semibold text-isen">
-                            <span className="link-line break-all">{contact.email}</span>
-                            <ArrowUpRight className="h-[0.8em] w-[0.8em] flex-none transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1" strokeWidth={2.25} />
-                        </a>
-
-                        <ul className="mt-10 flex flex-wrap gap-3 text-[15px] font-semibold">
-                            <li><a href={contact.whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex h-11 items-center rounded-[3px] border border-wax/30 px-5 transition-colors hover:border-wax hover:bg-wax/10">WhatsApp {contact.whatsappLabel}</a></li>
-                            <li><a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex h-11 items-center rounded-[3px] border border-wax/30 px-5 transition-colors hover:border-wax hover:bg-wax/10">LinkedIn</a></li>
-                            <li><a href={contact.github} target="_blank" rel="noopener noreferrer" className="inline-flex h-11 items-center rounded-[3px] border border-wax/30 px-5 transition-colors hover:border-wax hover:bg-wax/10">GitHub</a></li>
-                            <li><a href={contact.resume} download className="inline-flex h-11 items-center gap-1.5 rounded-[3px] bg-wax px-5 text-soga-deep transition-colors hover:bg-isen"><Download size={16} strokeWidth={2.25} /> {t.resumeCta}</a></li>
-                        </ul>
+                <section id="contact" className="contact-section">
+                    <div className="wrap contact-grid">
+                        <div className="contact-copy">
+                            <h2>{t.contactTitle}</h2>
+                            <p className="contact-lead">{t.contactLead}</p>
+                            <p>{t.contactIntro}</p>
+                        </div>
+                        <div className="contact-actions">
+                            <a href={mail} target="_blank" rel="noopener noreferrer" className="contact-email"><Mail size={20} />{contact.email}<ArrowUpRight size={18} /></a>
+                            <div className="contact-links">
+                                <a href={contact.whatsappHref} target="_blank" rel="noopener noreferrer"><MessageCircle size={17} />{t.whatsappCta}</a>
+                                <a href={contact.linkedin} target="_blank" rel="noopener noreferrer"><Linkedin size={17} />{t.linkedinCta}</a>
+                                <a href={contact.github} target="_blank" rel="noopener noreferrer"><Github size={17} />{t.githubCta}</a>
+                                <a href={contact.resume} download><Download size={17} />{t.resumeCta}</a>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </main>
 
-            <footer className="bg-soga-deep py-6 text-[14px] text-wax/65">
-                <div className="wrap flex flex-wrap items-center justify-between gap-3">
-                    <p>© 2026 {t.footer}</p>
-                    <a href="#top" className="link-line">arsyalavina.web.id</a>
+            <footer className="site-footer">
+                <div className="wrap footer-inner">
+                    <span>{t.footer}</span>
+                    <a href="#top">Arsyacoo <ArrowUpRight size={15} /></a>
                 </div>
             </footer>
         </>
